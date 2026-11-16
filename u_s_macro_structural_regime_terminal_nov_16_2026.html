@@ -1,0 +1,2074 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>U.S. Macro & Structural Regime Terminal — Nov 16, 2026</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            terminal: {
+              bg: '#0b0f19',
+              card: '#111827',
+              elevated: '#161f33',
+              border: '#1e293b',
+              borderHover: '#334155',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      background-color: #0b0f19;
+      color: #f8fafc;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0b0f19;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #334155;
+    }
+    .card-panel {
+      background-color: #111827;
+      border: 1px solid #1e293b;
+      transition: all 0.18s ease;
+    }
+    .card-panel:hover {
+      border-color: #334155;
+      background-color: #131c2e;
+    }
+    .catalyst-card-active {
+      border-color: #f59e0b !important;
+      background-color: #1a2234 !important;
+      box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.35);
+    }
+    @keyframes pulseSlow {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.45; }
+    }
+    .animate-pulse-slow {
+      animation: pulseSlow 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+  </style>
+</head>
+<body class="min-h-screen antialiased selection:bg-amber-500/30 selection:text-amber-200">
+
+  <!-- =====================================================================
+       1. TOP EXECUTIVE REGIME BANNER (ALWAYS VISIBLE)
+  ====================================================================== -->
+  <header class="sticky top-0 z-40 bg-[#0b0f19]/95 backdrop-blur-md border-b border-[#1e293b]">
+    <div class="max-w-[1600px] mx-auto px-3 sm:px-6 pt-3 pb-2.5">
+      <!-- Top Header Bar & Global Freshness Audit Filter -->
+      <div class="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-2.5">
+        <div class="flex flex-wrap items-center gap-2.5">
+          <div class="flex items-center gap-2">
+            <span class="h-2.5 w-2.5 rounded-full bg-amber-500 animate-pulse-slow"></span>
+            <h1 class="text-sm sm:text-base font-extrabold tracking-tight text-slate-100 uppercase">
+              U.S. MACRO &amp; STRUCTURAL REGIME TERMINAL
+            </h1>
+          </div>
+          <span class="px-2 py-0.5 text-[11px] font-mono font-semibold rounded bg-slate-800/90 text-slate-300 border border-slate-700/80">
+            INSTITUTIONAL 3-TIER REGIME &amp; LIQUIDITY ENGINE · AS OF MON NOV 16, 2026 · 17:04 SAST (10:04 EST)
+          </span>
+        </div>
+
+        <!-- Live Freshness Audit Filter Pill Group -->
+        <div class="flex flex-wrap items-center gap-1.5 bg-[#111827] px-2.5 py-1 rounded-lg border border-[#1e293b]">
+          <span class="text-[10px] font-mono font-bold text-slate-400 mr-1">FRESHNESS AUDIT:</span>
+          <button id="fresh-all" onclick="setFreshnessFilter('ALL')" class="fresh-btn px-2.5 py-1 text-[11px] font-mono font-semibold rounded bg-slate-800 text-slate-100 transition">
+            All Indicators (17)
+          </button>
+          <button id="fresh-live" onclick="setFreshnessFilter('LIVE_WEEKLY')" class="fresh-btn px-2.5 py-1 text-[11px] font-mono font-semibold rounded text-slate-400 hover:text-emerald-300 transition">
+            Live &amp; Weekly (8)
+          </button>
+          <button id="fresh-lag" onclick="setFreshnessFilter('MONTHLY_QUARTERLY')" class="fresh-btn px-2.5 py-1 text-[11px] font-mono font-semibold rounded text-slate-400 hover:text-cyan-300 transition">
+            Monthly &amp; Quarterly Lagged (9)
+          </button>
+        </div>
+      </div>
+
+      <!-- Master Regime Card -->
+      <div class="mt-2.5 bg-gradient-to-r from-amber-500/15 via-[#111827] to-[#111827] border border-amber-500/40 rounded-lg px-3.5 py-2 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-2">
+        <div class="flex flex-wrap items-center gap-2.5">
+          <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400">Master Regime:</span>
+          <span class="px-2.5 py-0.5 rounded bg-amber-500/20 border border-amber-400/50 text-amber-300 font-mono font-extrabold text-xs sm:text-sm tracking-wide shadow-[0_0_12px_rgba(245,158,11,0.25)]">
+            REFLATION
+          </span>
+          <span class="text-xs text-slate-200 font-medium">
+            Above-Trend Growth (<strong class="text-emerald-400 font-mono">+3.4% Q3 GDP</strong> / <strong class="text-emerald-400 font-mono">+3.5% Q4 GDPNow</strong>) + Sticky Core Inflation (<strong class="text-amber-300 font-mono">+0.3% MoM Core CPI</strong>; <strong class="text-rose-400 font-mono">94% CME FedWatch odds of 25bp Dec Hike</strong>)
+          </span>
+        </div>
+        <div class="text-[11px] font-mono text-amber-300/90 shrink-0">
+          NY EMPIRE MFG TODAY: <strong>7.80</strong> (MISS VS 17.60)
+        </div>
+      </div>
+
+      <!-- 4 Rolling 3-Year Composite Z-Score Gauges -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-2.5 mt-2.5">
+        <!-- Cyclical Demand (S_demand) -->
+        <div class="bg-[#111827] border border-[#1e293b] rounded-lg px-3 py-2 flex items-center justify-between">
+          <div class="min-w-0 pr-2">
+            <div class="flex items-center gap-1.5">
+              <span class="text-[11px] font-mono font-semibold text-slate-300">Cyclical Demand (S_demand)</span>
+              <span class="text-[10px] px-1.5 py-0.2 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono">EXPANSION</span>
+            </div>
+            <p class="text-[11px] text-slate-400 truncate mt-0.5" title="Strong expansion; Oct Retail Sales +0.15% MoM / +3.57% YoY; Nov NY Empire Mfg cooled to 7.80 from 25.50">
+              Oct Retail +0.15% MoM/+3.57% YoY; Nov NY Empire cooled to 7.80
+            </p>
+          </div>
+          <div class="text-right shrink-0">
+            <div class="text-base sm:text-lg font-bold tabular-nums text-emerald-400">+0.83<span class="text-xs font-normal text-slate-500 ml-0.5">Z</span></div>
+            <div class="w-16 h-1.5 bg-slate-800 rounded-full overflow-hidden mt-1">
+              <div class="h-full bg-emerald-500 rounded-full" style="width: 77%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Structural Health (S_struct) -->
+        <div class="bg-[#111827] border border-[#1e293b] rounded-lg px-3 py-2 flex items-center justify-between">
+          <div class="min-w-0 pr-2">
+            <div class="flex items-center gap-1.5">
+              <span class="text-[11px] font-mono font-semibold text-slate-300">Structural Health (S_struct)</span>
+              <span class="text-[10px] px-1.5 py-0.2 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono">INTACT</span>
+            </div>
+            <p class="text-[11px] text-slate-400 truncate mt-0.5" title="Secular foundations intact: +165k Oct NFP, 4.1% UR, $3.16/MMBtu Henry Hub moat">
+              +165k Oct NFP, 4.1% UR, $3.16/MMBtu Henry Hub moat
+            </p>
+          </div>
+          <div class="text-right shrink-0">
+            <div class="text-base sm:text-lg font-bold tabular-nums text-emerald-400">+0.74<span class="text-xs font-normal text-slate-500 ml-0.5">Z</span></div>
+            <div class="w-16 h-1.5 bg-slate-800 rounded-full overflow-hidden mt-1">
+              <div class="h-full bg-emerald-500 rounded-full" style="width: 74%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Monetary & Liquidity (S_liq) -->
+        <div class="bg-[#111827] border border-[#1e293b] rounded-lg px-3 py-2 flex items-center justify-between">
+          <div class="min-w-0 pr-2">
+            <div class="flex items-center gap-1.5">
+              <span class="text-[11px] font-mono font-semibold text-slate-300">Monetary &amp; Liq (S_liq)</span>
+              <span class="text-[10px] px-1.5 py-0.2 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20 font-mono">RESTRICTIVE</span>
+            </div>
+            <p class="text-[11px] text-slate-400 truncate mt-0.5" title="Restrictive plumbing: ON RRP exhausted at $0B, 2Y at 4.88%, 10Y at 5.10%, DXY at 19-mo high 103.48">
+              ON RRP $0B, 2Y 4.88%, 10Y 5.10%, DXY 103.48 (19-mo high)
+            </p>
+          </div>
+          <div class="text-right shrink-0">
+            <div class="text-base sm:text-lg font-bold tabular-nums text-rose-400">-0.46<span class="text-xs font-normal text-slate-500 ml-0.5">Z</span></div>
+            <div class="w-16 h-1.5 bg-slate-800 rounded-full overflow-hidden mt-1">
+              <div class="h-full bg-rose-500 rounded-full" style="width: 34%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Inflation Impulse (S_infl) -->
+        <div class="bg-[#111827] border border-[#1e293b] rounded-lg px-3 py-2 flex items-center justify-between">
+          <div class="min-w-0 pr-2">
+            <div class="flex items-center gap-1.5">
+              <span class="text-[11px] font-mono font-semibold text-slate-300">Inflation Impulse (S_infl)</span>
+              <span class="text-[10px] px-1.5 py-0.2 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20 font-mono">STICKY</span>
+            </div>
+            <p class="text-[11px] text-slate-400 truncate mt-0.5" title="Sticky pipeline: Core CPI +0.3% MoM for 3rd straight month, Headline CPI +0.4% MoM / +3.7% YoY, PPI +6.5% YoY">
+              Core CPI +0.3% MoM (3rd mo), CPI +3.7% YoY, PPI +6.5% YoY
+            </p>
+          </div>
+          <div class="text-right shrink-0">
+            <div class="text-base sm:text-lg font-bold tabular-nums text-amber-400">+0.68<span class="text-xs font-normal text-slate-500 ml-0.5">Z</span></div>
+            <div class="w-16 h-1.5 bg-slate-800 rounded-full overflow-hidden mt-1">
+              <div class="h-full bg-amber-500 rounded-full" style="width: 73%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Nowcast Ticker Strip -->
+      <div class="mt-2.5 pt-2 border-t border-[#1e293b]/80 flex items-center gap-2 overflow-x-auto pb-1 text-[11px] font-mono whitespace-nowrap">
+        <span class="px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-400 font-bold shrink-0">LIVE NOWCAST</span>
+        <span class="text-slate-300">Q4 GDPNow: <strong class="text-emerald-400">+3.5%</strong> <span class="text-slate-500">(Next: Nov 17)</span></span>
+        <span class="text-slate-600">|</span>
+        <span class="text-slate-300">10Y Treasury (DGS10): <strong class="text-rose-400">5.10%</strong> <span class="text-rose-300">(+12 bps)</span></span>
+        <span class="text-slate-600">|</span>
+        <span class="text-slate-300">2Y Treasury (DGS2): <strong class="text-amber-300">4.88%</strong> <span class="text-slate-400">(+2 bps)</span></span>
+        <span class="text-slate-600">|</span>
+        <span class="text-slate-300">10Y-2Y Slope (T10Y2Y): <strong class="text-emerald-400">+0.27%</strong> <span class="text-slate-400">(+3 bps)</span></span>
+        <span class="text-slate-600">|</span>
+        <span class="text-slate-300">10Y-3M Slope (T10Y3M): <strong class="text-amber-400">+0.83%</strong></span>
+        <span class="text-slate-600">|</span>
+        <span class="text-slate-300">HY OAS (BAMLH0A0HYM2): <strong class="text-cyan-400">3.20%</strong> <span class="text-slate-400">(-10 bps)</span></span>
+        <span class="text-slate-600">|</span>
+        <span class="text-slate-300">Fed Assets (WALCL): <strong class="text-slate-100">$6.76T</strong> <span class="text-slate-400">(+$10.7B)</span></span>
+        <span class="text-slate-600">|</span>
+        <span class="text-slate-300">Bank Reserves (WRESBAL): <strong class="text-emerald-400">$2.96T</strong></span>
+        <span class="text-slate-600">|</span>
+        <span class="text-slate-300">ON RRP (RRPONTSYD): <strong class="text-rose-400">$0.00B</strong> <span class="text-rose-300">(Exhausted)</span></span>
+        <span class="text-slate-600">|</span>
+        <span class="text-slate-300">Initial Claims (ICSA): <strong class="text-emerald-400">200k</strong> <span class="text-slate-400">(+9k)</span></span>
+        <span class="text-slate-600">|</span>
+        <span class="text-slate-300">NY Empire Mfg (Nov): <strong class="text-amber-300">7.80</strong> <span class="text-emerald-400">(Released Today)</span></span>
+        <span class="text-slate-600">|</span>
+        <span class="text-slate-300">DXY / Broad USD: <strong class="text-amber-300">103.48 / 121.88</strong></span>
+      </div>
+
+      <!-- 2. 7-DAY FORWARD CATALYST & VOLATILITY STRIP EMBEDDED IN TOP BANNER -->
+      <div class="mt-2.5 pt-2.5 border-t border-[#1e293b]">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-2">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
+              7-DAY CATALYST &amp; VOLATILITY STRIP
+            </span>
+            <span class="text-xs font-semibold text-slate-200">
+              Mon Nov 16 – Sun Nov 22, 2026 <span class="text-slate-400 font-normal">(Click any card for Sensitivity &amp; Z-Score Flip Drawer)</span>
+            </span>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2">
+            <div class="inline-flex rounded-lg bg-[#111827] p-0.5 border border-[#1e293b]">
+              <button id="btn-cat-all" onclick="setCatalystFilter('ALL')" class="px-2.5 py-0.5 text-[11px] font-mono font-semibold rounded bg-slate-800 text-slate-100 transition">
+                All Catalysts (6)
+              </button>
+              <button id="btn-cat-t1" onclick="setCatalystFilter('TIER-1')" class="px-2.5 py-0.5 text-[11px] font-mono font-semibold rounded text-slate-400 hover:text-slate-200 transition">
+                Tier-1 Only (4)
+              </button>
+            </div>
+            <span class="px-2 py-0.5 text-[11px] font-mono rounded bg-violet-500/15 text-violet-300 border border-violet-500/30">
+              Preview: Wed Nov 25 — Q3 GDP 2nd Est &amp; Oct PCE
+            </span>
+          </div>
+        </div>
+
+        <!-- Horizontal Catalyst Cards -->
+        <div id="catalyst-strip" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-2">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <!-- Collapsible Catalyst Sensitivity Drawer -->
+        <div id="catalyst-drawer" class="hidden mt-2.5 bg-[#111827] border border-amber-500/40 rounded-lg p-3">
+          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 pb-2 border-b border-[#1e293b]">
+            <div class="space-y-1">
+              <div class="flex flex-wrap items-center gap-2">
+                <span id="drawer-tier-badge" class="px-2 py-0.5 text-[10px] font-mono font-bold rounded"></span>
+                <span id="drawer-datetime" class="text-xs font-mono text-slate-300 font-semibold"></span>
+                <span id="drawer-vol" class="px-2 py-0.5 text-[10px] font-mono rounded bg-amber-500/15 text-amber-300 border border-amber-500/30"></span>
+              </div>
+              <h3 id="drawer-title" class="text-sm font-bold text-slate-100"></h3>
+              <div class="flex flex-wrap items-center gap-3 text-xs font-mono">
+                <span id="drawer-consensus" class="text-cyan-300"></span>
+                <span id="drawer-flip" class="text-rose-300"></span>
+              </div>
+            </div>
+            <button onclick="closeCatalystDrawer()" class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 self-start">
+              CLOSE ✕
+            </button>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-2.5 mt-2.5 text-xs">
+            <div class="bg-[#0b0f19] border border-emerald-500/25 rounded-lg p-2.5">
+              <div class="text-[10px] font-mono font-bold text-emerald-400 mb-1">UPSIDE SURPRISE / HAWKISH</div>
+              <p id="drawer-upside" class="text-slate-300 leading-relaxed"></p>
+            </div>
+            <div class="bg-[#0b0f19] border border-slate-700 rounded-lg p-2.5">
+              <div class="text-[10px] font-mono font-bold text-slate-300 mb-1">INLINE / CONSENSUS</div>
+              <p id="drawer-inline" class="text-slate-300 leading-relaxed"></p>
+            </div>
+            <div class="bg-[#0b0f19] border border-rose-500/25 rounded-lg p-2.5">
+              <div class="text-[10px] font-mono font-bold text-rose-400 mb-1">DOWNSIDE MISS / DOVISH</div>
+              <p id="drawer-downside" class="text-slate-300 leading-relaxed"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       3. FOUR-TAB NAVIGATION WORKSPACE
+  ====================================================================== -->
+  <main class="max-w-[1600px] mx-auto px-3 sm:px-6 py-4 space-y-4">
+
+    <!-- Primary Tab Navigation Bar -->
+    <section class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 bg-[#111827] border border-[#1e293b] rounded-xl p-2">
+      <nav class="flex flex-wrap items-center gap-1.5" role="tablist">
+        <button id="tab-btn-1" onclick="switchTab(1)" class="tab-btn px-3 py-2 text-xs font-semibold rounded-lg bg-amber-500/15 text-amber-300 border border-amber-500/40 transition flex items-center gap-1.5">
+          <span>1. Layer 1 Control Plane</span>
+          <span class="font-mono text-[10px] opacity-80">(10 Pillars)</span>
+        </button>
+        <button id="tab-btn-2" onclick="switchTab(2)" class="tab-btn px-3 py-2 text-xs font-semibold rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800/60 border border-transparent transition flex items-center gap-1.5">
+          <span>2. Monetary, Liquidity &amp; Cyclical Impulse</span>
+          <span class="font-mono text-[10px] opacity-80">(7 Modules)</span>
+        </button>
+        <button id="tab-btn-3" onclick="switchTab(3)" class="tab-btn px-3 py-2 text-xs font-semibold rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800/60 border border-transparent transition flex items-center gap-1.5">
+          <span>3. Layer 2 Pillar Drill-Down Explorer</span>
+          <span class="font-mono text-[10px] opacity-80">(4-Panel)</span>
+        </button>
+        <button id="tab-btn-4" onclick="switchTab(4)" class="tab-btn px-3 py-2 text-xs font-semibold rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800/60 border border-transparent transition flex items-center gap-1.5">
+          <span>4. Active Alerts &amp; Layer 3 Regime Playbook</span>
+          <span class="px-1.5 py-0.2 text-[10px] font-mono font-bold rounded-full bg-rose-500/20 text-rose-400 border border-rose-500/40">5</span>
+        </button>
+      </nav>
+
+      <div id="active-filter-indicator" class="px-2.5 py-1 text-[11px] font-mono text-slate-400">
+        Showing: <strong class="text-slate-200">All Indicators (17)</strong>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         TAB 1: LAYER 1 CONTROL PLANE (ZONE A DEMAND & ZONE B STRUCTURAL)
+    ====================================================================== -->
+    <div id="tab-panel-1" class="space-y-4">
+      <!-- Zone A: 4 Macroeconomic Demand Pillars -->
+      <div class="card-panel rounded-xl p-4">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3 pb-2.5 border-b border-[#1e293b]">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">LAYER 1 · ZONE A</span>
+              <h2 class="text-sm sm:text-base font-bold text-slate-100">Macroeconomic Demand Pillars (GDP Expenditure Engine)</h2>
+            </div>
+            <p class="text-xs text-slate-400 mt-0.5">Composite Cyclical Demand <span class="font-mono text-emerald-400 font-semibold">S_demand = +0.83Z</span> · Click any pillar card to open Tab 3 Drill-Down Explorer</p>
+          </div>
+          <span class="text-[11px] font-mono text-slate-400">3-Year Rolling Z-Score Normalization</span>
+        </div>
+
+        <div id="zone-a-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3">
+          <!-- Populated via JS -->
+        </div>
+      </div>
+
+      <!-- Zone B: 6 Structural & Sectoral Anchors -->
+      <div class="card-panel rounded-xl p-4">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3 pb-2.5 border-b border-[#1e293b]">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-cyan-500/15 text-cyan-400 border border-cyan-500/30">LAYER 1 · ZONE B</span>
+              <h2 class="text-sm sm:text-base font-bold text-slate-100">Structural &amp; Sectoral Anchors (Secular Resilience Engine)</h2>
+            </div>
+            <p class="text-xs text-slate-400 mt-0.5">Composite Structural Health <span class="font-mono text-emerald-400 font-semibold">S_struct = +0.74Z</span> · Click any pillar card to inspect 4-Panel decomposition</p>
+          </div>
+          <span class="text-[11px] font-mono text-slate-400">5/6 Positive · Capital Markets Tightening (-0.35Z)</span>
+        </div>
+
+        <div id="zone-b-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
+          <!-- Populated via JS -->
+        </div>
+      </div>
+
+      <!-- Tab 1 Charts Row -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <!-- Chart A: Horizontal Bar Chart of all 10 Pillar 3-Year Z-Scores -->
+        <div class="card-panel rounded-xl p-4">
+          <div class="flex items-center justify-between mb-3">
+            <div>
+              <h3 class="text-sm font-bold text-slate-100">All 10 Layer 1 Pillar 3-Year Rolling Z-Scores</h3>
+              <p class="text-xs text-slate-400">Color-coded by positive expansion (emerald) vs. structural drag/tightening (rose)</p>
+            </div>
+            <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-800 text-slate-300 border border-slate-700">NOV 16, 2026</span>
+          </div>
+          <div class="relative h-72 w-full">
+            <canvas id="chart-pillar-zscores"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart B: Dual-Axis Line Chart of Quarterly Real GDP Growth vs Core CPI & 10Y Treasury Yield -->
+        <div class="card-panel rounded-xl p-4">
+          <div class="flex items-center justify-between mb-3">
+            <div>
+              <h3 class="text-sm font-bold text-slate-100">Quarterly Real GDP Growth vs. Core CPI &amp; 10Y Treasury Yield</h3>
+              <p class="text-xs text-slate-400">2024 – Nov 16, 2026: Reflation Confirmation (+3.5% Q4 GDPNow, 5.10% 10Y Yield)</p>
+            </div>
+            <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-amber-500/15 text-amber-300 border border-amber-500/30">DUAL-AXIS</span>
+          </div>
+          <div class="relative h-72 w-full">
+            <canvas id="chart-gdp-cpi-10y"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =====================================================================
+         TAB 2: MONETARY, LIQUIDITY & CYCLICAL IMPULSE (7 MODULES)
+    ====================================================================== -->
+    <div id="tab-panel-2" class="hidden space-y-4">
+      <!-- Block A: Monetary, Credit & Liquidity (4 Modules) -->
+      <div class="card-panel rounded-xl p-4">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3 pb-2.5 border-b border-[#1e293b]">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-rose-500/15 text-rose-400 border border-rose-500/30">BLOCK A · MONETARY, CREDIT &amp; LIQUIDITY</span>
+              <h2 class="text-sm sm:text-base font-bold text-slate-100">Yield Curve, Real Policy Rates, FCI &amp; Fed Balance Sheet Plumbing</h2>
+            </div>
+            <p class="text-xs text-slate-400 mt-0.5">Liquidity Composite <span class="font-mono text-rose-400 font-semibold">S_liq = -0.46Z</span> · ON RRP exhausted at $0.00B; 10Y at 5.10%</p>
+          </div>
+        </div>
+
+        <div id="impulse-block-a" class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <!-- Populated via JS -->
+        </div>
+      </div>
+
+      <!-- Block B: Cyclical & Inflation Impulse (3 Modules) -->
+      <div class="card-panel rounded-xl p-4">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3 pb-2.5 border-b border-[#1e293b]">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-amber-500/15 text-amber-300 border border-amber-500/30">BLOCK B · CYCLICAL &amp; INFLATION IMPULSE</span>
+              <h2 class="text-sm sm:text-base font-bold text-slate-100">High-Frequency LEIs, Real-Time Labor &amp; Price Pressures</h2>
+            </div>
+            <p class="text-xs text-slate-400 mt-0.5">Inflation Composite <span class="font-mono text-amber-400 font-semibold">S_infl = +0.68Z</span> · 3rd consecutive +0.3% MoM Core CPI drives 94% Dec hike odds</p>
+          </div>
+        </div>
+
+        <div id="impulse-block-b" class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <!-- Populated via JS -->
+        </div>
+      </div>
+
+      <!-- Tab 2 Charts Row -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <!-- Chart A: Fed Balance Sheet ($6.76T WALCL), Bank Reserves ($2.96T), and ON RRP ($0.00B) Exhaustion Trajectory -->
+        <div class="card-panel rounded-xl p-4">
+          <div class="flex items-center justify-between mb-3">
+            <div>
+              <h3 class="text-sm font-bold text-slate-100">Fed Balance Sheet ($6.76T), Reserves ($2.96T) &amp; ON RRP ($0.00B) Exhaustion</h3>
+              <p class="text-xs text-slate-400">Sterilization buffer fully depleted as of Nov 13/16; QT &amp; TGA drains now hit reserves directly</p>
+            </div>
+            <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-rose-500/15 text-rose-400 border border-rose-500/30">RRP $0.00B</span>
+          </div>
+          <div class="relative h-72 w-full">
+            <canvas id="chart-fed-plumbing"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart B: Yield Curve Bear-Steepening (DGS10 5.10% vs DGS2 4.88%, T10Y2Y +27 bps) & 10Y TIPS Real Yield Surge -->
+        <div class="card-panel rounded-xl p-4">
+          <div class="flex items-center justify-between mb-3">
+            <div>
+              <h3 class="text-sm font-bold text-slate-100">Yield Curve Bear-Steepening (DGS10 5.10% vs. DGS2 4.88%) &amp; 10Y TIPS Real Yield</h3>
+              <p class="text-xs text-slate-400">T10Y2Y +27 bps (+3 bps) | 10Y TIPS Real Yield surges to 2.54% on sticky inflation &amp; Dec hike repricing</p>
+            </div>
+            <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-amber-500/15 text-amber-300 border border-amber-500/30">DGS10 5.10%</span>
+          </div>
+          <div class="relative h-72 w-full">
+            <canvas id="chart-yield-curve"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =====================================================================
+         TAB 3: LAYER 2 PILLAR DRILL-DOWN EXPLORER
+    ====================================================================== -->
+    <div id="tab-panel-3" class="hidden space-y-4">
+      <div class="card-panel rounded-xl p-4">
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 pb-3 border-b border-[#1e293b]">
+          <div>
+            <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-violet-500/15 text-violet-300 border border-violet-500/30">LAYER 2 · DEEP DECOMPOSITION ENGINE</span>
+            <h2 class="text-base sm:text-lg font-bold text-slate-100 mt-1">Pillar Drill-Down Explorer (4-Panel Institutional Blueprint)</h2>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <label for="pillar-select" class="text-xs font-mono text-slate-400">SELECT PILLAR:</label>
+            <select id="pillar-select" onchange="selectDrilldownPillar(this.value)" class="bg-[#0b0f19] border border-slate-700 text-slate-100 text-xs font-mono rounded-lg px-3 py-2 focus:outline-none focus:border-amber-500">
+              <!-- Populated via JS -->
+            </select>
+          </div>
+        </div>
+
+        <!-- Pill Selector Bar -->
+        <div id="pillar-pills" class="flex flex-wrap gap-1.5 my-3">
+          <!-- Populated via JS -->
+        </div>
+
+        <!-- Live Data Vintage Audit Strip -->
+        <div id="drilldown-vintage-bar" class="bg-[#0b0f19] border border-[#1e293b] rounded-lg p-3 mb-4 space-y-2">
+          <!-- Populated via JS -->
+        </div>
+
+        <!-- Standardized 4-Panel Grid -->
+        <div id="drilldown-4panel" class="grid grid-cols-1 md:grid-cols-2 gap-3.5 mb-4">
+          <!-- Populated via JS -->
+        </div>
+
+        <!-- Dynamic Sub-Series Chart.js Visualization -->
+        <div class="bg-[#0b0f19] border border-[#1e293b] rounded-xl p-4">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-3">
+            <div>
+              <h3 id="drilldown-chart-title" class="text-sm font-bold text-slate-100"></h3>
+              <p id="drilldown-chart-subtitle" class="text-xs text-slate-400"></p>
+            </div>
+            <span id="drilldown-chart-badge" class="px-2 py-0.5 text-[10px] font-mono rounded bg-slate-800 text-slate-300 border border-slate-700 self-start"></span>
+          </div>
+          <div class="relative h-64 w-full">
+            <canvas id="chart-drilldown-subseries"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =====================================================================
+         TAB 4: ACTIVE ALERTS & LAYER 3 REGIME PLAYBOOK
+    ====================================================================== -->
+    <div id="tab-panel-4" class="hidden space-y-4">
+      <!-- 5 Live Divergence & Stress Alert Cards -->
+      <div class="card-panel rounded-xl p-4">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3 pb-2.5 border-b border-[#1e293b]">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-rose-500/20 text-rose-400 border border-rose-500/40">REAL-TIME STRESS &amp; DIVERGENCE MONITOR</span>
+              <h2 class="text-sm sm:text-base font-bold text-slate-100">Active Macro &amp; Plumbing Divergence Alerts (5 Live)</h2>
+            </div>
+            <p class="text-xs text-slate-400 mt-0.5">Cross-layer anomalies updated for Monday, November 16, 2026 (17:04 SAST)</p>
+          </div>
+          <span class="text-xs font-mono text-rose-400">2 CRITICAL · 2 HIGH · 1 VINTAGE WATCH</span>
+        </div>
+
+        <div class="space-y-2.5">
+          <!-- Alert 1 -->
+          <div class="bg-[#0b0f19] border-l-4 border-l-rose-500 border border-[#1e293b] rounded-r-lg p-3.5">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-rose-500/20 text-rose-400">1. CRITICAL PLUMBING</span>
+                <h3 class="text-xs sm:text-sm font-bold text-slate-100">ON RRP Exhausted at $0.00B (Nov 13) — Zero Excess Money-Market Buffer Left</h3>
+              </div>
+              <span class="text-[11px] font-mono text-slate-400">NY FED / H.4.1 · WATCH THU NOV 19</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Overnight Reverse Repo facility balances hit <span class="font-mono text-rose-400 font-semibold">$0.00B</span> on Nov 13. With zero excess money-market buffer left to absorb TGA or QT drains (<span class="font-mono text-slate-100">WALCL $6.76T</span>), future liquidity drains hit Bank Reserves (<span class="font-mono text-amber-300">$2.96T</span>) 1-for-1. Closely monitor the <span class="font-mono text-cyan-300">SOFR–IORB spread</span> on Thu Nov 19 H.4.1.
+            </p>
+          </div>
+
+          <!-- Alert 2 -->
+          <div class="bg-[#0b0f19] border-l-4 border-l-rose-500 border border-[#1e293b] rounded-r-lg p-3.5">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-rose-500/20 text-rose-400">2. HAWKISH REPRICING SHOCK</span>
+                <h3 class="text-xs sm:text-sm font-bold text-slate-100">10Y Nominal Yield at 5.10% (+24 bps WoW) &amp; 94% CME FedWatch Odds of 25bp Dec Hike</h3>
+              </div>
+              <span class="text-[11px] font-mono text-slate-400">TREASURY / BLS / CME · NOV 16</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Following the 3rd straight <span class="font-mono text-amber-300">+0.3% MoM Core CPI</span> print (Headline CPI +0.4% MoM / +3.7% YoY, PPI +6.5% YoY), <span class="font-mono text-rose-400 font-semibold">10Y Nominal Yield surged to 5.10% (+24 bps WoW)</span> while CME FedWatch prices <span class="font-mono text-amber-300 font-semibold">94% odds of a 25bp December Fed hike</span>.
+            </p>
+          </div>
+
+          <!-- Alert 3 -->
+          <div class="bg-[#0b0f19] border-l-4 border-l-amber-500 border border-[#1e293b] rounded-r-lg p-3.5">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-amber-500/20 text-amber-300">3. CONSUMER BUFFER COMPRESSION</span>
+                <h3 class="text-xs sm:text-sm font-bold text-slate-100">Oct Retail Sales Slowed to +0.15% MoM (NRF) Amid 7.21% 30Y Mortgage Rates</h3>
+              </div>
+              <span class="text-[11px] font-mono text-slate-400">CNBC/NRF · CENSUS DUE TUE NOV 17</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              High-frequency CNBC/NRF Retail Monitor showed Oct Retail Sales slowing to <span class="font-mono text-amber-300">+0.15% MoM</span> (+3.57% YoY) as households lean on early holiday discounting amid <span class="font-mono text-slate-100">7.21% 30Y mortgage rates</span> and elevated gasoline prices ahead of tomorrow's Census Retail Sales print.
+            </p>
+          </div>
+
+          <!-- Alert 4 -->
+          <div class="bg-[#0b0f19] border-l-4 border-l-amber-500 border border-[#1e293b] rounded-r-lg p-3.5">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-amber-500/20 text-amber-300">4. REGIONAL MFG DECELERATION</span>
+                <h3 class="text-xs sm:text-sm font-bold text-slate-100">Nov NY Empire State Mfg Dropped Sharply to 7.80 Today (vs. 25.50 Prior / 17.60 Est)</h3>
+              </div>
+              <span class="text-[11px] font-mono text-slate-400">NY FED · RELEASED TODAY NOV 16</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Today's Nov NY Empire State Mfg print fell sharply to <span class="font-mono text-amber-300 font-semibold">7.80</span> from October's 5-year high of <span class="font-mono text-slate-100">25.50</span> (missing 17.60 consensus), signaling potential Q4 industrial cooling ahead of tomorrow's <span class="font-mono text-cyan-300">Oct Industrial Production</span> release while tempering 50bp hike tail risk.
+            </p>
+          </div>
+
+          <!-- Alert 5 -->
+          <div class="bg-[#0b0f19] border-l-4 border-l-cyan-500 border border-[#1e293b] rounded-r-lg p-3.5">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-cyan-500/20 text-cyan-300">5. VINTAGE &amp; REVISION WATCH</span>
+                <h3 class="text-xs sm:text-sm font-bold text-slate-100">Aug–Sep NFP Revised Up +84k Alongside Oct +165k Beat; 9 of 17 Series Lagged</h3>
+              </div>
+              <span class="text-[11px] font-mono text-slate-400">BLS / BEA · VINTAGE AUDIT</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Upward payroll revisions of <span class="font-mono text-emerald-400 font-semibold">+84k</span> across Aug–Sep alongside the <span class="font-mono text-emerald-400">+165k Oct NFP beat</span> (4.1% UR, AHE +0.4% MoM / +3.1% YoY) confirm tight labor momentum even as <span class="font-mono text-cyan-300">9 of 17 macro indicators</span> carry monthly or quarterly reporting lags.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Layer 3 Cross-Asset Positioning Matrix -->
+      <div class="card-panel rounded-xl p-4">
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 mb-4 pb-3 border-b border-[#1e293b]">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">LAYER 3 · CROSS-ASSET POSITIONING MATRIX</span>
+              <h2 class="text-sm sm:text-base font-bold text-slate-100">Institutional Asset Allocation &amp; Regime Scenario Switcher</h2>
+            </div>
+            <p class="text-xs text-slate-400 mt-0.5">Active <strong class="text-amber-300">Reflation</strong> playbook calibrated for 5.10% 10Y yields, 94% Dec hike odds, and $0.00B ON RRP</p>
+          </div>
+
+          <!-- 4-Regime Switcher Buttons -->
+          <div class="flex flex-wrap items-center gap-1.5 bg-[#0b0f19] p-1 rounded-lg border border-[#1e293b]">
+            <button id="reg-btn-REFLATION" onclick="setPlaybookRegime('REFLATION')" class="reg-btn px-3 py-1.5 text-xs font-mono font-bold rounded-md bg-amber-500/20 text-amber-300 border border-amber-500/40 transition">
+              Reflation [ACTIVE]
+            </button>
+            <button id="reg-btn-EXPANSION" onclick="setPlaybookRegime('EXPANSION')" class="reg-btn px-3 py-1.5 text-xs font-mono font-semibold rounded-md text-slate-400 hover:text-emerald-300 transition">
+              Expansion
+            </button>
+            <button id="reg-btn-STAGFLATION" onclick="setPlaybookRegime('STAGFLATION')" class="reg-btn px-3 py-1.5 text-xs font-mono font-semibold rounded-md text-slate-400 hover:text-rose-300 transition">
+              Stagflation
+            </button>
+            <button id="reg-btn-CONTRACTION" onclick="setPlaybookRegime('CONTRACTION')" class="reg-btn px-3 py-1.5 text-xs font-mono font-semibold rounded-md text-slate-400 hover:text-cyan-300 transition">
+              Contraction
+            </button>
+          </div>
+        </div>
+
+        <!-- Regime Summary Callout -->
+        <div id="playbook-header-box" class="bg-[#0b0f19] border border-[#1e293b] rounded-lg p-3 mb-4">
+          <!-- Populated via JS -->
+        </div>
+
+        <!-- 5 Asset Class Cards -->
+        <div id="playbook-cards" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-3">
+          <!-- Populated via JS -->
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="max-w-[1600px] mx-auto px-3 sm:px-6 py-4 border-t border-[#1e293b] mt-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] font-mono text-slate-500">
+    <div>U.S. MACRO &amp; STRUCTURAL REGIME TERMINAL · 3-TIER QUANTITATIVE ARCHITECTURE</div>
+    <div>AS OF MON NOV 16, 2026 · 17:04 SAST (10:04 EST) · ALL Z-SCORES 3-YEAR ROLLING</div>
+  </footer>
+
+  <!-- =====================================================================
+       APPLICATION DATA & INTERACTIVE LOGIC
+  ====================================================================== -->
+  <script>
+    // -----------------------------------------------------------------------
+    // 1. 7-DAY FORWARD CATALYST & VOLATILITY DATA (MON NOV 16 – SUN NOV 22)
+    // -----------------------------------------------------------------------
+    const CATALYSTS = [
+      {
+        id: 'cat-1',
+        day: 'MON NOV 16',
+        time: 'RELEASED TODAY · 08:30 EST',
+        title: 'NY Empire State Mfg Index (Nov) + Warsh & Williams Speeches',
+        tier: 'TIER-2',
+        status: 'ACTUAL: 7.80 (MISS)',
+        vol: '10Y ±4 bps / SPX ±0.45%',
+        consensus: 'Actual: 7.80 vs Est: 17.60 / Prior: 25.50 (5-Yr High)',
+        flipThreshold: 'Z-Score Flip: < -2.0 on Empire New Orders',
+        upside: 'Hawkish Fed speeches from Chair Warsh & NY Fed Williams reinforcing 94% Dec 25bp hike odds keep 10Y anchored above 5.10% and DXY near 103.50.',
+        inline: '7.80 expansion print confirms sharp deceleration from Oct’s 25.50 spike, tempering 50bp hike tail risk while leaving Dec 25bp hike base case intact.',
+        downside: 'Dovish emphasis on factory cooling from Warsh/Williams sparks modest 2Y/5Y short covering (-4 to -6 bps) and tech relief bounce.'
+      },
+      {
+        id: 'cat-2',
+        day: 'TUE NOV 17',
+        time: 'TOMORROW · 08:30–11:00 EST',
+        title: 'Oct Census Retail Sales, Industrial Prod & Q4 GDPNow',
+        tier: 'TIER-1',
+        status: 'TOMORROW · TIER-1',
+        vol: '10Y ±8 bps / SPX ±0.75%',
+        consensus: 'Retail Sales Est: +0.0% to +0.6% MoM (Prior +0.8%, NRF +0.15%) | IP Est: +0.1% (Prior +0.7%) | CapUtil Est: 76.8% | GDPNow 11:00 EST (+3.5%)',
+        flipThreshold: 'Z-Score Flip: Control Group < -0.2% pushes S_demand < +0.60Z',
+        upside: 'Census Retail Sales >= +0.5% MoM & IP >= +0.3% lifts Q4 GDPNow toward +3.8%, pushing 10Y yield to 5.18%+ and cementing Dec hike.',
+        inline: 'Soft +0.1%–+0.2% Retail Sales (matching NRF +0.15%) + +0.1% IP keeps Q4 GDPNow near +3.4%–+3.5%, validating Reflation regime.',
+        downside: 'Negative Retail Sales (< -0.2%) + IP contraction (< -0.3%) signals consumer buffer exhaustion under 7.21% mortgages; 10Y rallies -8 to -10 bps.'
+      },
+      {
+        id: 'cat-3',
+        day: 'WED NOV 18',
+        time: '08:30–10:30 EST',
+        title: 'Oct Housing Starts, Building Permits, Pending Sales & EIA Stocks',
+        tier: 'TIER-2',
+        status: 'IN 2 DAYS',
+        vol: 'WTI ±2.1% / 10Y ±5 bps',
+        consensus: 'Starts Est: 1.23M (Prior 1.221M) | Permits Est: 1.38M (Prior 1.398M) | EIA Crude Prior: +4.66M bbl build',
+        flipThreshold: 'Z-Score Flip: Starts < 1.15M triggers Residential Drag alert',
+        upside: 'Crude inventory draw (> -2.5M bbl) + resilient Starts (> 1.26M) lifts WTI & Henry Hub ($3.16/MMBtu), reinforcing Energy (+0.85Z) & inflation.',
+        inline: 'Starts ~1.23M & Permits ~1.38M reflect steady 7.21% 30Y mortgage drag; balanced EIA report keeps energy moat intact.',
+        downside: 'Second consecutive large crude build (> +4.0M bbl) + Permits drop (< 1.33M) cools headline inflation impulse and pressures homebuilders.'
+      },
+      {
+        id: 'cat-4',
+        day: 'THU NOV 19',
+        time: '08:30 EST',
+        title: 'Weekly Initial Jobless Claims & Nov Philly Fed Mfg Index',
+        tier: 'TIER-1',
+        status: 'IN 3 DAYS · TIER-1',
+        vol: '10Y ±7 bps / SPX ±0.65%',
+        consensus: 'Claims Est: 195k vs Prior 200k (+9k) | Continuing Claims Prior: 1.697M | Philly Fed Nov Mfg',
+        flipThreshold: 'Z-Score Flip: Claims > 225k flips Labor Impulse below +0.50Z',
+        upside: 'Claims <= 195k (near 57-yr lows) + Philly Fed > +10 confirms +165k Oct NFP strength; locks in Dec hike and steepens curve.',
+        inline: 'Claims ~195k–202k & Continuing Claims ~1.70M maintain 4.1% UR trajectory and full-employment consumption floor.',
+        downside: 'Claims spike > 220k + Philly Fed contraction (< 0) echoes today’s NY Empire miss (7.80), triggering rapid bull-steepening in 2Y–5Y.'
+      },
+      {
+        id: 'cat-5',
+        day: 'THU NOV 19',
+        time: '16:30 EST',
+        title: 'Fed H.4.1 Balance Sheet (WALCL) & NY Fed ON RRP Plumbing Check',
+        tier: 'TIER-1',
+        status: 'IN 3 DAYS · TIER-1',
+        vol: 'SOFR-IORB ±3 bps / QQQ ±0.80%',
+        consensus: 'WALCL Prior: $6.759T (+$10.7B) | Bank Reserves: $2.96T | ON RRP: $0.00B (Exhausted)',
+        flipThreshold: 'Z-Score Flip: Reserves < $2.88T or SOFR-IORB > +5 bps triggers Acute Plumbing Stress',
+        upside: 'TGA drawdown injects liquidity, lifting Bank Reserves back > $3.00T and keeping SOFR-IORB well behaved; supports QQQ & risk assets.',
+        inline: 'WALCL steady ~$6.75T–$6.76T with ON RRP pinned at $0.00B and Bank Reserves holding near $2.95T–$2.96T.',
+        downside: 'TGA rebuild drains Bank Reserves < $2.90T with zero ON RRP cushion left ($0.00B), widening SOFR-IORB and pressuring high-multiple tech/crypto.'
+      },
+      {
+        id: 'cat-6',
+        day: 'FRI NOV 20',
+        time: '09:45–10:00 EST',
+        title: 'S&P Global Nov Flash PMIs + Final Nov UMich Sentiment & Infl Exp',
+        tier: 'TIER-1',
+        status: 'IN 4 DAYS · TIER-1',
+        vol: '10Y ±6 bps / DXY ±0.45%',
+        consensus: 'Flash Services & Mfg PMIs | Final Nov UMich Sentiment & 1Y / 5Y Inflation Expectations',
+        flipThreshold: 'Z-Score Flip: UMich 5Y Infl Exp >= 3.3% pushes S_infl > +0.80Z',
+        upside: 'Services PMI > 54 + UMich 1Y/5Y inflation expectations ticking higher reinforces sticky +0.3% MoM Core CPI trend and lifts DXY > 104.00.',
+        inline: 'Services expansion offsetting modest Mfg PMI keeps composite growth aligned with +3.5% Q4 GDPNow.',
+        downside: 'Flash Mfg PMI < 48.5 + UMich Sentiment drop on 5.10% rates/inflation flags Q4 growth fatigue into Thanksgiving week.'
+      }
+    ];
+
+    // -----------------------------------------------------------------------
+    // 2. LAYER 1: 10 PILLARS (ZONE A = 4 DEMAND, ZONE B = 6 STRUCTURAL)
+    // -----------------------------------------------------------------------
+    const PILLARS = [
+      // ZONE A (4 Demand Pillars)
+      {
+        id: 'p1',
+        zone: 'A',
+        num: '01',
+        name: 'Personal Consumption (C)',
+        weight: '~68% GDP',
+        rawMetric: 'Q3 Real PCE +3.8% SAAR · NRF Oct +0.15% MoM / +3.57% YoY',
+        zScore: 0.92,
+        regime: 'STRONG EXPANSION',
+        regimeColor: 'emerald',
+        freshnessGroup: 'MONTHLY_QUARTERLY',
+        freshnessBadge: 'MONTHLY · LAG 0D (NRF) / 1D (CENSUS)',
+        freshnessColor: 'cyan',
+        lastPrint: 'Nov 11/16 NRF (+0.15% MoM)',
+        nextRelease: 'Tue Nov 17 (1d)',
+        summary: 'Q3 Real PCE +3.8% SAAR, Oct NFP +165k, AHE +0.4% MoM / +3.1% YoY; Oct Retail Sales slowed to +0.15% MoM.',
+        drilldown: {
+          vintageNote: 'High-frequency CNBC/NRF Retail Monitor (+0.15% MoM / +3.57% YoY) provides T-0D bridge ahead of tomorrow’s Tue Nov 17 Census Oct Retail Sales release.',
+          revisionNote: 'Aug–Sep NFP revised up +84k alongside +165k Oct payrolls and +3.1% YoY Average Hourly Earnings, confirming solid nominal income support.',
+          panel1: 'Q3 Real PCE accelerated at +3.8% SAAR, underpinned by +165k Oct nonfarm payroll growth, 4.1% unemployment, and +0.4% MoM (+3.1% YoY) wage gains.',
+          panel2: 'Consumer buffer compression is emerging: Oct Retail Sales slowed to +0.15% MoM (NRF) as households lean on early holiday discounting amid 7.21% 30Y mortgage rates and 5.10% 10Y yields.',
+          panel3: 'Tomorrow’s Tue Nov 17 (08:30 EST) Census Oct Retail Sales (Est +0.0% to +0.6% MoM vs Prior +0.8%) is the immediate Tier-1 test for Q4 GDPNow (+3.5%).',
+          panel4: 'Discretionary vs. Staples relative strength is narrowing; watch for retail margin compression if discounting intensifies in Q4.',
+          chartTitle: 'Real PCE Growth (% SAAR) & Monthly Retail Sales Impulse',
+          chartSubtitle: 'Q3 Real PCE +3.8% SAAR | Oct NRF Retail Sales +3.57% YoY (+0.15% MoM)',
+          labels: ['Q1 26', 'Q2 26', 'Q3 26 (Adv)', 'Oct 26 (NRF YoY)'],
+          values: [2.9, 3.3, 3.8, 3.57],
+          unit: '%'
+        }
+      },
+      {
+        id: 'p2',
+        zone: 'A',
+        num: '02',
+        name: 'Private Investment (I)',
+        weight: '~18% GDP',
+        rawMetric: 'Q3 GPDI +20.9% SAAR · 30Y Mortgage 7.21%',
+        zScore: 0.98,
+        regime: 'CAPEX BOOM',
+        regimeColor: 'emerald',
+        freshnessGroup: 'MONTHLY_QUARTERLY',
+        freshnessBadge: 'MONTHLY · LAG 2D',
+        freshnessColor: 'cyan',
+        lastPrint: 'Nov 14, 2026',
+        nextRelease: 'Wed Nov 18 Starts/Permits (2d)',
+        summary: 'Q3 GPDI surged +20.9% SAAR on AI/Data Center CapEx boom, offsetting 7.21% 30Y mortgage housing drag.',
+        drilldown: {
+          vintageNote: 'Updated Nov 14 with corporate capex & mortgage rate trackers; Wed Nov 18 (08:30 EST) brings Oct Housing Starts (Est 1.23M) & Permits (Est 1.38M).',
+          revisionNote: 'Q3 Gross Private Domestic Investment (+20.9% SAAR) subject to 2nd GDP revision on Wed Nov 25.',
+          panel1: 'Gross Private Domestic Investment (GPDI) surged +20.9% SAAR in Q3, propelled by hyperscaler AI data center construction, grid equipment, and inventory restocking.',
+          panel2: '30Y fixed mortgage rates at 7.21% and 10Y Treasury yields at 5.10% create acute financing friction for residential construction and leveraged middle-market capex.',
+          panel3: 'Wed Nov 18 Oct Housing Starts (Est 1.23M vs Prior 1.221M) and Building Permits (Est 1.38M vs Prior 1.398M) will gauge residential stabilization.',
+          panel4: 'AI infrastructure, electrical equipment, and industrial automation equities outperform rate-sensitive residential REITs and small-cap levered borrowers.',
+          chartTitle: 'Private Investment 3-Year Rolling Z-Score (+0.98Z)',
+          chartSubtitle: 'AI/Data Center CapEx Surge Offsetting 7.21% Mortgage Drag',
+          labels: ['Q4 25', 'Q1 26', 'Q2 26', 'Q3 26', 'Nov 16 Est'],
+          values: [0.62, 0.74, 0.85, 0.96, 0.98],
+          unit: 'Z'
+        }
+      },
+      {
+        id: 'p3',
+        zone: 'A',
+        num: '03',
+        name: 'Government Spending (G)',
+        weight: '~17% GDP',
+        rawMetric: 'Defense & State/Local Steady · Debt Service Rising',
+        zScore: 0.62,
+        regime: 'SUPPORTIVE',
+        regimeColor: 'emerald',
+        freshnessGroup: 'MONTHLY_QUARTERLY',
+        freshnessBadge: 'QUARTERLY · LAG 18D',
+        freshnessColor: 'violet',
+        lastPrint: 'Oct 29 BEA Q3 Adv',
+        nextRelease: 'Wed Nov 25 Q3 2nd Est (9d)',
+        summary: 'Defense procurement and state/local infrastructure outlays remain steady; federal debt service burden rising at 5.10% 10Y.',
+        drilldown: {
+          vintageNote: 'Quarterly BEA series last printed Oct 29 (18-day lag); next scheduled update is Wed Nov 25 (Q3 GDP 2nd Estimate, 9 days away).',
+          revisionNote: 'Federal outlay tracking via Daily Treasury Statement confirms steady Q4 defense and infrastructure disbursements.',
+          panel1: 'Defense procurement replenishment and state/local capital expenditures provide a steady +0.62Z fiscal floor under aggregate demand.',
+          panel2: 'With 10Y Treasury yields at 5.10% and 2Y at 4.88%, federal net interest outlays continue to climb, adding long-end Treasury supply pressure.',
+          panel3: 'Daily Treasury Statement defense and highway trust fund outlays show uninterrupted Q4 fiscal impulse.',
+          panel4: 'Heavy coupon issuance + sticky inflation drives bear-steepening across the Treasury curve (T10Y2Y +0.27%, T10Y3M +0.83%).',
+          chartTitle: 'Government Spending & Fiscal Impulse Z-Score (+0.62Z)',
+          chartSubtitle: 'Quarterly BEA Trajectory — Next Update Wed Nov 25',
+          labels: ['Q4 25', 'Q1 26', 'Q2 26', 'Q3 26 Adv'],
+          values: [0.58, 0.61, 0.64, 0.62],
+          unit: 'Z'
+        }
+      },
+      {
+        id: 'p4',
+        zone: 'A',
+        num: '04',
+        name: 'Net Exports (X-M)',
+        weight: '~-3% GDP',
+        rawMetric: 'Q3 Net Exports -3.32 pp Drag · DXY 103.48',
+        zScore: -0.25,
+        regime: 'TRADE DRAG',
+        regimeColor: 'rose',
+        freshnessGroup: 'MONTHLY_QUARTERLY',
+        freshnessBadge: 'MONTHLY · LAG 12D',
+        freshnessColor: 'cyan',
+        lastPrint: 'Nov 4 BEA Trade',
+        nextRelease: 'Dec 4 Oct Trade (18d)',
+        summary: 'Q3 Net Exports imposed a -3.32 pp drag on GDP; DXY surge to 19-month high (103.48) pressures Q4 goods competitiveness.',
+        drilldown: {
+          vintageNote: 'Monthly BEA International Trade last released Nov 4 (12-day lag); next print Dec 4 (18 days). FX proxy (DXY 103.48) tracked live.',
+          revisionNote: 'Q3 Net Exports subtracted -3.32 percentage points from headline Q3 GDP (+3.4%) due to strong domestic import pull.',
+          panel1: 'Strong U.S. domestic demand pulled in capital and consumer goods imports in Q3 (-3.32 pp GDP drag), only partially offset by LNG and services exports.',
+          panel2: 'DXY surging to a 19-month high of 103.48 (Broad USD 121.88) tightens global dollar liquidity and creates a Q4 price competitiveness headwind for U.S. exporters.',
+          panel3: 'Weekly U.S. LNG export loadings and port container data point to persistent merchandise trade deficits in Q4.',
+          panel4: 'Strong USD (103.48) reinforces U.S. Reflation exceptionalism while pressuring EM currencies and multinational FX translation.',
+          chartTitle: 'Net Exports Z-Score (-0.25Z) & Trade Drag',
+          chartSubtitle: '3-Year Rolling Z-Score — DXY at 19-Month High (103.48)',
+          labels: ['Jun 26', 'Jul 26', 'Aug 26', 'Sep 26', 'Nov 16 Est'],
+          values: [-0.15, -0.19, -0.22, -0.24, -0.25],
+          unit: 'Z'
+        }
+      },
+
+      // ZONE B (6 Structural Pillars)
+      {
+        id: 'p5',
+        zone: 'B',
+        num: '05',
+        name: 'Service & Knowledge Economy',
+        weight: 'Zone B · Anchor 1',
+        rawMetric: 'Health Care +41.6k · Prof/Bus Svc +70k (Oct)',
+        zScore: 0.64,
+        regime: 'EXPANDING',
+        regimeColor: 'emerald',
+        freshnessGroup: 'MONTHLY_QUARTERLY',
+        freshnessBadge: 'MONTHLY · LAG 10D',
+        freshnessColor: 'cyan',
+        lastPrint: 'Nov 6 BLS / Nov 4 ISM',
+        nextRelease: 'Tue Nov 17 NY Fed Services (1d)',
+        summary: 'Health Care (+41.6k) & Prof/Bus Services (+70k) drove Oct payroll beat; sticky services inflation keeps Core CPI +0.3% MoM.',
+        drilldown: {
+          vintageNote: 'Anchored by Nov 6 BLS Employment Situation and Nov 4 ISM Services; tomorrow Tue Nov 17 brings NY Fed Services Business Activity.',
+          revisionNote: 'Oct payroll gains in Health Care (+41.6k) and Professional & Business Services (+70k) accompanied +84k upward revisions to Aug–Sep NFP.',
+          panel1: 'High-value service sectors remain the primary U.S. job engine, with Health Care (+41.6k) and Prof/Bus Services (+70k) powering Oct’s +165k NFP beat.',
+          panel2: 'Services wage stickiness (AHE +0.4% MoM / +3.1% YoY) keeps Core CPI locked at +0.3% MoM for a 3rd consecutive month.',
+          panel3: 'Tomorrow’s Tue Nov 17 NY Fed Services survey and Fri Nov 20 S&P Global Nov Flash Services PMI will test Q4 momentum.',
+          panel4: 'Services pricing power insulates corporate operating margins despite 5.10% 10Y Treasury yields.',
+          chartTitle: 'Service & Knowledge Economy Z-Score (+0.64Z)',
+          chartSubtitle: 'Structural Expansion Led by Health Care & Professional Services',
+          labels: ['Jun 26', 'Jul 26', 'Aug 26', 'Sep 26', 'Oct 26'],
+          values: [0.56, 0.58, 0.60, 0.62, 0.64],
+          unit: 'Z'
+        }
+      },
+      {
+        id: 'p6',
+        zone: 'B',
+        num: '06',
+        name: 'Tech, AI & IP Leadership',
+        weight: 'Zone B · Anchor 2',
+        rawMetric: 'AI Hyperscaler CapEx & IP Boom · +1.18Z',
+        zScore: 1.18,
+        regime: 'SECULAR LEADER',
+        regimeColor: 'emerald',
+        freshnessGroup: 'MONTHLY_QUARTERLY',
+        freshnessBadge: 'QUARTERLY · LAG 18D',
+        freshnessColor: 'violet',
+        lastPrint: 'Oct 29 BEA',
+        nextRelease: 'Wed Nov 25 (9d)',
+        summary: 'Software & R&D IP investment + AI hyperscaler CapEx driving secular U.S. productivity moat (#1 Pillar at +1.18Z).',
+        drilldown: {
+          vintageNote: 'Quarterly BEA Intellectual Property Products (IPP) last released Oct 29 (18-day lag); next revision Wed Nov 25 (9 days).',
+          revisionNote: 'Q3 corporate earnings guidance confirmed continued upward revisions to 2026–2027 AI compute and data-center capex budgets.',
+          panel1: 'Software, R&D Intellectual Property investment, and AI hyperscaler CapEx sit at +1.18Z — the strongest structural pillar in the U.S. economy.',
+          panel2: 'Exhaustion of ON RRP ($0.00B) and 5.10% 10Y yields create valuation sensitivity for unprofitable software, though cash-rich mega-caps self-fund capex.',
+          panel3: 'Semiconductor order books, utility interconnection queues, and cloud infrastructure revenue run-rates confirm sustained Q4 acceleration.',
+          panel4: 'Watch Thu Nov 19 Fed H.4.1 liquidity check ($2.96T reserves) for marginal liquidity effects on high-multiple tech equities.',
+          chartTitle: 'Tech, AI & IP Leadership Z-Score Trajectory (+1.18Z)',
+          chartSubtitle: 'Highest Structural Anchor Across All 10 Pillars',
+          labels: ['Q4 25', 'Q1 26', 'Q2 26', 'Q3 26 Adv'],
+          values: [0.96, 1.04, 1.11, 1.18],
+          unit: 'Z'
+        }
+      },
+      {
+        id: 'p7',
+        zone: 'B',
+        num: '07',
+        name: 'Capital Markets & USD Reserve',
+        weight: 'Zone B · Anchor 3',
+        rawMetric: 'DXY 103.48 · Broad USD 121.88 · 10Y 5.10% · HY 3.20%',
+        zScore: -0.35,
+        regime: 'TIGHTENING PLUMBING',
+        regimeColor: 'rose',
+        freshnessGroup: 'LIVE_WEEKLY',
+        freshnessBadge: 'LIVE · T-1D',
+        freshnessColor: 'emerald',
+        lastPrint: 'Nov 13/16, 2026',
+        nextRelease: 'Daily 16:15 EST',
+        summary: 'DXY at 19-mo high (103.48), Broad USD 121.88, 10Y surged to 5.10% (+12 bps), while HY OAS remains tight at 3.20%.',
+        drilldown: {
+          vintageNote: 'Live daily market & Fed H.15 series updated through Nov 13/16; next daily print at 16:15 EST.',
+          revisionNote: '10Y nominal yield surged +24 bps WoW to 5.10% and DXY reached a 19-month high of 103.48 as markets priced 94% odds of a Dec Fed hike.',
+          panel1: 'U.S. capital markets continue to attract global reserve inflows, propelling DXY to a 19-month high of 103.48 (Broad USD 121.88).',
+          panel2: 'Score flipped negative (-0.35Z) due to acute rate & plumbing tightening: 10Y at 5.10%, 2Y at 4.88%, and ON RRP exhausted at $0.00B.',
+          panel3: 'Credit markets show striking divergence: ICE BofA HY OAS tightened -10 bps to 3.20%, pricing minimal default risk despite 5.10% risk-free yields.',
+          panel4: 'Critical cross-asset divergence: tight 3.20% HY spreads vs. 5.10% 10Y yields and $0.00B ON RRP leaves zero margin for liquidity shocks.',
+          chartTitle: 'Capital Markets & USD Liquidity Z-Score (-0.35Z)',
+          chartSubtitle: 'Tightening Driven by 5.10% 10Y Yield, 103.48 DXY & $0.00B ON RRP',
+          labels: ['Oct 19', 'Oct 26', 'Nov 02', 'Nov 09', 'Nov 16'],
+          values: [0.05, -0.06, -0.15, -0.24, -0.35],
+          unit: 'Z'
+        }
+      },
+      {
+        id: 'p8',
+        zone: 'B',
+        num: '08',
+        name: 'Energy & Resource Self-Sufficiency',
+        weight: 'Zone B · Anchor 4',
+        rawMetric: 'Henry Hub Spot $3.00 / Dec Fut $3.16/MMBtu',
+        zScore: 0.85,
+        regime: 'COST MOAT INTACT',
+        regimeColor: 'emerald',
+        freshnessGroup: 'LIVE_WEEKLY',
+        freshnessBadge: 'WEEKLY · T-4D',
+        freshnessColor: 'amber',
+        lastPrint: 'Nov 12 EIA / Nov 16 CME',
+        nextRelease: 'Wed Nov 18 EIA (2d)',
+        summary: 'Henry Hub spot $3.00 / Dec futures $3.16/MMBtu preserves massive U.S. industrial cost moat vs. EU/Asia.',
+        drilldown: {
+          vintageNote: 'Weekly EIA inventory data from Nov 12 paired with live Nov 16 CME Henry Hub natural gas pricing ($3.16/MMBtu Dec futures).',
+          revisionNote: 'Prior EIA Petroleum report showed a +4.66M bbl crude build; next EIA report due Wed Nov 18 (10:30 EST).',
+          panel1: 'U.S. energy independence and abundant natural gas ($3.00/MMBtu spot, $3.16/MMBtu Dec futures) give domestic manufacturing and AI data centers a decisive power cost moat.',
+          panel2: 'Regional pipeline takeaway constraints and elevated retail gasoline prices create localized consumer friction without eroding industrial competitiveness.',
+          panel3: 'Wed Nov 18 (10:30 EST) Weekly EIA Petroleum Status Report will update refinery utilization and crude storage after last week’s +4.66M bbl build.',
+          panel4: 'Supports U.S. petrochemicals, LNG exporters, and domestic power-generation infrastructure.',
+          chartTitle: 'Energy & Resource Self-Sufficiency Z-Score (+0.85Z)',
+          chartSubtitle: 'Henry Hub $3.00 Spot / $3.16 Dec Futures Industrial Cost Advantage',
+          labels: ['Oct 19', 'Oct 26', 'Nov 02', 'Nov 09', 'Nov 16'],
+          values: [0.80, 0.82, 0.84, 0.85, 0.85],
+          unit: 'Z'
+        }
+      },
+      {
+        id: 'p9',
+        zone: 'B',
+        num: '09',
+        name: 'High-Value Mfg & Defense Base',
+        weight: 'Zone B · Anchor 5',
+        rawMetric: 'Oct Mfg +19k (+101k YTD) · NY Empire 7.80 Today',
+        zScore: 0.44,
+        regime: 'MODEST EXPANSION',
+        regimeColor: 'emerald',
+        freshnessGroup: 'LIVE_WEEKLY',
+        freshnessBadge: 'LIVE · TODAY',
+        freshnessColor: 'emerald',
+        lastPrint: 'Nov 16 NY Empire (7.80)',
+        nextRelease: 'Tue Nov 17 Oct Ind Prod (1d)',
+        summary: 'Oct Mfg payrolls +19k (+101k since Dec 2025 low); Nov NY Empire cooled today to 7.80 from 25.50.',
+        drilldown: {
+          vintageNote: 'Updated LIVE TODAY (Nov 16, 08:30 EST) with Nov NY Empire State Mfg (7.80); next release tomorrow Tue Nov 17 (Oct Industrial Production).',
+          revisionNote: 'Oct Mfg payrolls added +19k jobs (+101k cumulative rebound since Dec 2025 trough), though today’s NY Empire print cooled sharply from 25.50 to 7.80.',
+          panel1: 'High-value aerospace, defense prime backlogs, and reshoring fab construction lifted manufacturing payrolls by +19k in Oct (+101k since Dec 2025 low).',
+          panel2: 'Today’s Nov NY Empire State Mfg drop to 7.80 (vs. 17.60 Est / 25.50 Prior) signals rate (5.10% 10Y) and DXY (103.48) headwinds on regional factories.',
+          panel3: 'Tomorrow’s Tue Nov 17 (09:15 EST) Oct Industrial Production (Est +0.1% vs Prior +0.7%) and CapUtil (Est 76.8%) will confirm national factory output.',
+          panel4: 'Favor defense primes and grid equipment over rate-sensitive export machinery.',
+          chartTitle: 'High-Value Mfg & Defense Base Z-Score (+0.44Z)',
+          chartSubtitle: 'Oct Mfg +19k Jobs Offset by Today’s Nov NY Empire Cooldown (7.80)',
+          labels: ['Jul 26', 'Aug 26', 'Sep 26', 'Oct 26', 'Nov 16 (Empire)'],
+          values: [0.34, 0.38, 0.42, 0.49, 0.44],
+          unit: 'Z'
+        }
+      },
+      {
+        id: 'p10',
+        zone: 'B',
+        num: '10',
+        name: 'Rule of Law & Labor Flexibility',
+        weight: 'Zone B · Anchor 6',
+        rawMetric: 'Claims 200k · Cont. 1.697M · JOLTS 7.523M · UR 4.1%',
+        zScore: 0.72,
+        regime: 'FULL EMPLOYMENT',
+        regimeColor: 'emerald',
+        freshnessGroup: 'LIVE_WEEKLY',
+        freshnessBadge: 'WEEKLY · T-4D',
+        freshnessColor: 'amber',
+        lastPrint: 'Nov 12 DOL Claims',
+        nextRelease: 'Thu Nov 19 Claims (3d)',
+        summary: 'Initial Claims 200k (near 57-yr lows), Continuing Claims 1.697M, JOLTS openings 7.523M, UR 4.1%.',
+        drilldown: {
+          vintageNote: 'Weekly DOL Jobless Claims from Nov 12 (T-4D lag); next Tier-1 release Thu Nov 19 (08:30 EST, Est 195k).',
+          revisionNote: 'Paired with Oct BLS Employment Situation (4.1% UR, +165k NFP, +84k Aug–Sep upward revision) and JOLTS openings at 7.523M.',
+          panel1: 'Initial Jobless Claims at 200k (+9k, near 57-year lows), Continuing Claims at 1.697M, JOLTS openings at 7.523M, and 4.1% unemployment reflect exceptional labor market resilience.',
+          panel2: 'Persistent labor tightness sustains +3.1% YoY wage growth, preventing services disinflation and locking in 94% odds of a Dec Fed hike.',
+          panel3: 'Thu Nov 19 (08:30 EST) Initial Claims consensus sits at 195k vs 200k prior.',
+          panel4: 'Full employment underpins household solvency and prevents recessionary credit default spikes (HY OAS at 3.20%).',
+          chartTitle: 'Rule of Law & Labor Flexibility Z-Score (+0.72Z)',
+          chartSubtitle: 'Claims 200k, JOLTS 7.523M & 4.1% Unemployment Confirm Tight Labor',
+          labels: ['Oct 19', 'Oct 26', 'Nov 02', 'Nov 09', 'Nov 16'],
+          values: [0.68, 0.70, 0.71, 0.72, 0.72],
+          unit: 'Z'
+        }
+      }
+    ];
+
+    // -----------------------------------------------------------------------
+    // 3. TAB 2: 7 MONETARY, LIQUIDITY & CYCLICAL IMPULSE MODULES
+    // -----------------------------------------------------------------------
+    const IMPULSE_MODULES = [
+      // Block A (4 Modules)
+      {
+        id: 'm1',
+        block: 'A',
+        num: 'M1',
+        title: 'Yield Curve & Term Structure',
+        freshnessGroup: 'LIVE_WEEKLY',
+        freshnessBadge: 'LIVE · T-1D',
+        freshnessColor: 'emerald',
+        lastPrint: 'Nov 13/16, 2026',
+        nextRelease: 'Daily 16:15 EST',
+        primaryStat: '10Y 5.10% (+12 bps) · 2Y 4.88% (+2 bps)',
+        zScore: '+0.82Z (Bear-Steepening)',
+        zColor: 'amber',
+        details: [
+          { label: '10Y Treasury (DGS10)', val: '5.10% (+12 bps; +24 bps WoW)' },
+          { label: '2Y Treasury (DGS2)', val: '4.88% (+2 bps)' },
+          { label: '10Y-2Y / 10Y-3M Slopes', val: 'T10Y2Y +0.27% (+3 bps) | T10Y3M +0.83%' }
+        ],
+        commentary: 'Aggressive bear-steepening as long-end term premium reprices for sticky +0.3% MoM Core CPI, +3.5% Q4 GDPNow, and heavy Treasury supply.'
+      },
+      {
+        id: 'm2',
+        block: 'A',
+        num: 'M2',
+        title: 'Real Policy Rates',
+        freshnessGroup: 'LIVE_WEEKLY',
+        freshnessBadge: 'LIVE · T-1D',
+        freshnessColor: 'emerald',
+        lastPrint: 'Nov 13/16, 2026',
+        nextRelease: 'Dec FOMC (94% Hike Odds)',
+        primaryStat: '94% CME Odds of 25bp Dec Hike · 10Y TIPS 2.54%',
+        zScore: '+0.64Z (Hawkish Repricing)',
+        zColor: 'rose',
+        details: [
+          { label: 'CME FedWatch Dec Pricing', val: '94% Odds of +25bp Dec Fed Hike' },
+          { label: '10Y TIPS Real Yield', val: '2.54% (+11 bps WoW Surge)' },
+          { label: 'Policy Transmission', val: '30Y Mortgage 7.21% | DXY 103.48' }
+        ],
+        commentary: '3rd straight +0.3% MoM Core CPI print forced a violent hawkish repricing, lifting 10Y TIPS real yields to 2.54% and DXY to a 19-month high.'
+      },
+      {
+        id: 'm3',
+        block: 'A',
+        num: 'M3',
+        title: 'FCI & Credit Spreads',
+        freshnessGroup: 'LIVE_WEEKLY',
+        freshnessBadge: 'LIVE · T-1D',
+        freshnessColor: 'emerald',
+        lastPrint: 'Nov 13/16, 2026',
+        nextRelease: 'Daily Close',
+        primaryStat: 'HY OAS 3.20% (-10 bps) · Tight Spreads',
+        zScore: '-0.66Z (Accommodative Credit)',
+        zColor: 'cyan',
+        details: [
+          { label: 'ICE BofA HY OAS', val: '3.20% (-10 bps tightening)' },
+          { label: 'Credit vs. Rates Split', val: '320 bps OAS vs. 5.10% 10Y Treasury' },
+          { label: 'Primary Issuance', val: 'Open corporate access; low default rate' }
+        ],
+        commentary: 'Corporate credit spreads tightened -10 bps to 3.20%, buffering strong balance sheets against the 5.10% Treasury yield shock.'
+      },
+      {
+        id: 'm4',
+        block: 'A',
+        num: 'M4',
+        title: 'Money Supply & Fed Balance Sheet',
+        freshnessGroup: 'LIVE_WEEKLY',
+        freshnessBadge: 'WEEKLY · T-3D',
+        freshnessColor: 'amber',
+        lastPrint: 'Nov 13 H.4.1 / NY Fed',
+        nextRelease: 'Thu Nov 19 (16:30 EST)',
+        primaryStat: 'WALCL $6.76T (+$10.7B) · ON RRP $0.00B',
+        zScore: '-0.46Z (Buffer Exhausted)',
+        zColor: 'rose',
+        details: [
+          { label: 'Fed Assets (WALCL)', val: '$6.76T (+$10.7B w/w)' },
+          { label: 'Bank Reserves (WRESBAL)', val: '$2.96T (Direct QT/TGA exposure)' },
+          { label: 'ON RRP (RRPONTSYD)', val: '$0.00B (Exhausted as of Nov 13)' }
+        ],
+        commentary: 'CRITICAL: ON RRP is exhausted at $0.00B. Zero excess money-market buffer remains to absorb TGA/QT drains; watch SOFR-IORB on Thu Nov 19.'
+      },
+
+      // Block B (3 Modules)
+      {
+        id: 'm5',
+        block: 'B',
+        num: 'M5',
+        title: 'High-Frequency LEIs',
+        freshnessGroup: 'LIVE_WEEKLY',
+        freshnessBadge: 'LIVE · TODAY',
+        freshnessColor: 'emerald',
+        lastPrint: 'Nov 16 NY Empire (7.80)',
+        nextRelease: 'Tue Nov 17 GDPNow (11:00 EST)',
+        primaryStat: 'Q4 GDPNow +3.5% · Nov NY Empire 7.80',
+        zScore: '+0.84Z (Above-Trend Growth)',
+        zColor: 'emerald',
+        details: [
+          { label: 'Atlanta Fed Q4 GDPNow', val: '+3.5% SAAR (Next: Tue Nov 17)' },
+          { label: 'Q3 Real GDP Growth', val: '+3.4% SAAR (+3.8% Real PCE)' },
+          { label: 'Nov NY Empire Mfg (Today)', val: '7.80 (Cooled from 25.50; Est 17.60)' }
+        ],
+        commentary: 'Headline Q4 GDPNow (+3.5%) remains well above trend, though today’s NY Empire miss (7.80) hints at Q4 industrial moderation.'
+      },
+      {
+        id: 'm6',
+        block: 'B',
+        num: 'M6',
+        title: 'Labour Market Real-Time Impulse',
+        freshnessGroup: 'LIVE_WEEKLY',
+        freshnessBadge: 'WEEKLY · T-4D',
+        freshnessColor: 'amber',
+        lastPrint: 'Nov 12 Claims / Nov 6 NFP',
+        nextRelease: 'Thu Nov 19 Claims (08:30 EST)',
+        primaryStat: 'Claims 200k (+9k) · Oct NFP +165k · UR 4.1%',
+        zScore: '+0.76Z (Tight Labor)',
+        zColor: 'emerald',
+        details: [
+          { label: 'Initial / Cont. Claims', val: '200k (+9k, near 57-yr lows) | 1.697M Cont.' },
+          { label: 'Oct NFP & Revisions', val: '+165k Oct beat | +84k Aug–Sep upward rev' },
+          { label: 'UR / Wages / JOLTS', val: '4.1% UR | AHE +3.1% YoY | JOLTS 7.523M' }
+        ],
+        commentary: 'Upward +84k prior NFP revisions, +165k Oct payrolls, and 200k jobless claims eliminate near-term recession risk.'
+      },
+      {
+        id: 'm7',
+        block: 'B',
+        num: 'M7',
+        title: 'Inflation & Cost Pressures',
+        freshnessGroup: 'MONTHLY_QUARTERLY',
+        freshnessBadge: 'MONTHLY · LAG 4D',
+        freshnessColor: 'cyan',
+        lastPrint: 'Nov 12/13 CPI & PPI',
+        nextRelease: 'Wed Nov 25 Oct PCE (9d)',
+        primaryStat: 'Core CPI +0.3% MoM (3rd Mo) · CPI +3.7% YoY',
+        zScore: '+0.68Z (Sticky Pipeline)',
+        zColor: 'amber',
+        details: [
+          { label: 'Core CPI Momentum', val: '+0.3% MoM for 3rd consecutive month' },
+          { label: 'Headline CPI / PPI', val: 'CPI +0.4% MoM / +3.7% YoY | PPI +6.5% YoY' },
+          { label: 'Energy Input Anchor', val: 'Henry Hub $3.00 spot / $3.16 Dec futures' }
+        ],
+        commentary: 'Sticky +0.3% MoM Core CPI and +6.5% YoY PPI keep inflation well above the Fed’s 2% target, forcing December tightening.'
+      }
+    ];
+
+    // -----------------------------------------------------------------------
+    // 4. LAYER 3 CROSS-ASSET PLAYBOOK DATA (4 REGIMES)
+    // -----------------------------------------------------------------------
+    const PLAYBOOK_DATA = {
+      REFLATION: {
+        badge: 'ACTIVE REGIME · MON NOV 16, 2026',
+        badgeClass: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
+        headline: 'REFLATION: +3.4% Q3 GDP / +3.5% Q4 GDPNow + Sticky +0.3% MoM Core CPI + 94% Odds of 25bp Dec Fed Hike',
+        guidance: 'Overweight nominal cash-flow compounders, AI/IP capex leaders (+1.18Z), energy moat producers (+0.85Z), and USD (103.48); underweight long nominal duration (10Y at 5.10%) and size liquidity-sensitive assets around $0.00B ON RRP.',
+        assets: [
+          {
+            name: 'U.S. Equities',
+            stance: 'OVERWEIGHT AI CAPEX, ENERGY & FINANCIALS',
+            stanceColor: 'emerald',
+            detail: 'Favor AI/IP infrastructure (+1.18Z), Health Care/Services (+0.64Z), Energy, and Banks benefiting from bear-steepening (T10Y2Y +27 bps). Underweight rate-sensitive REITs & small-cap leverage.'
+          },
+          {
+            name: 'Treasury Duration & Curve',
+            stance: 'UNDERWEIGHT DURATION · BEAR-STEEPENER',
+            stanceColor: 'rose',
+            detail: 'Park cash in 0–6M T-Bills ahead of Dec 25bp hike (94% priced). Hold 2s10s steepeners as DGS10 (5.10%) absorbs supply and sticky +3.7% YoY CPI.'
+          },
+          {
+            name: 'USD & FX',
+            stance: 'MAX OVERWEIGHT USD (DXY 103.48)',
+            stanceColor: 'emerald',
+            detail: 'Long DXY (19-mo high 103.48 / Broad USD 121.88) vs. EUR and JPY backed by 2.54% 10Y TIPS real yields, +3.5% Q4 GDPNow, and hawkish Dec FOMC repricing.'
+          },
+          {
+            name: 'Commodities & Energy',
+            stance: 'OVERWEIGHT U.S. ENERGY & GRID METALS',
+            stanceColor: 'emerald',
+            detail: 'Overweight U.S. natural gas/midstream (Henry Hub $3.16/MMBtu Dec futures) and electrification copper; tactical caution on crude ahead of Wed Nov 18 EIA report.'
+          },
+          {
+            name: 'Digital Assets',
+            stance: 'TACTICAL / LIQUIDITY-CONSTRAINED',
+            stanceColor: 'amber',
+            detail: 'Supported by institutional adoption & +6.5% PPI debasement narrative, but size around ON RRP exhaustion ($0.00B) and Thu Nov 19 H.4.1 Bank Reserves ($2.96T) checks.'
+          }
+        ]
+      },
+      EXPANSION: {
+        badge: 'SCENARIO 2 · GOLDILOCKS DISINFLATION',
+        badgeClass: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
+        headline: 'EXPANSION: Growth > +2.5% + Core CPI Cooling to <= +0.15% MoM + Fed Pausing / Cutting Cycle',
+        guidance: 'Requires Core CPI breaking below +0.2% MoM while Initial Claims stay near 200k. Triggers broad multiple expansion and duration relief.',
+        assets: [
+          { name: 'U.S. Equities', stance: 'MAX OVERWEIGHT GROWTH & BROAD CYCLICALS', stanceColor: 'emerald', detail: 'Broad rally across Tech/AI, Consumer Discretionary, and Industrials as 10Y yields retreat from 5.10% toward 4.25%.' },
+          { name: 'Treasury Duration & Curve', stance: 'OVERWEIGHT 5Y–10Y BELLY DURATION', stanceColor: 'cyan', detail: 'Add intermediate duration as Dec hike odds unwind and 10Y TIPS real yields compress from 2.54%.' },
+          { name: 'USD & FX', stance: 'NEUTRAL TO MODERATELY SOFT USD', stanceColor: 'amber', detail: 'DXY retreats from 103.48 as U.S.–G10 rate differentials peak and global manufacturing recovers.' },
+          { name: 'Commodities & Energy', stance: 'OVERWEIGHT INDUSTRIAL METALS', stanceColor: 'emerald', detail: 'Copper and industrial inputs outperform on synchronized global capex without monetary tightening.' },
+          { name: 'Digital Assets', stance: 'STRONG OVERWEIGHT', stanceColor: 'emerald', detail: 'Falling real yields + stabilizing Bank Reserves trigger high-beta digital asset breakout.' }
+        ]
+      },
+      STAGFLATION: {
+        badge: 'SCENARIO 3 · GROWTH STALL + STICKY INFLATION',
+        badgeClass: 'bg-rose-500/20 text-rose-300 border-rose-500/40',
+        headline: 'STAGFLATION: GDPNow Falling < +1.0% + Claims > 235k While Core CPI Stays >= +0.3% MoM',
+        guidance: 'Triggered if today’s NY Empire miss (7.80) and NRF Retail slowdown (+0.15% MoM) spread to payrolls while +6.5% PPI feeds into CPI.',
+        assets: [
+          { name: 'U.S. Equities', stance: 'UNDERWEIGHT · DEFENSIVE PRICING POWER', stanceColor: 'rose', detail: 'Rotate into Health Care, Consumer Staples, Energy producers, and low-leverage cash-flow monopolies.' },
+          { name: 'Treasury Duration & Curve', stance: 'OVERWEIGHT TIPS · AVOID LONG NOMINAL', stanceColor: 'amber', detail: 'Hold 5Y–10Y TIPS over nominal Treasuries as breakevens widen while Fed remains boxed in by +3.7% CPI.' },
+          { name: 'USD & FX', stance: 'SELECTIVE HAVEN (USD / CHF)', stanceColor: 'cyan', detail: 'Favor USD and CHF against cyclical and trade-deficit currencies.' },
+          { name: 'Commodities & Energy', stance: 'MAX OVERWEIGHT GOLD & ENERGY', stanceColor: 'emerald', detail: 'Gold and U.S. Energy serve as essential hedges against negative real equity/bond returns.' },
+          { name: 'Digital Assets', stance: 'UNDERWEIGHT / DEFENSIVE', stanceColor: 'rose', detail: 'Tight liquidity ($0.00B ON RRP) + contracting real disposable income creates sharp drawdown risk.' }
+        ]
+      },
+      CONTRACTION: {
+        badge: 'SCENARIO 4 · RECESSION & CREDIT WIDENING',
+        badgeClass: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40',
+        headline: 'CONTRACTION: Negative GDP + Claims > 260k + HY OAS Widening > 500 bps from 3.20%',
+        guidance: 'Triggered if 5.10% 10Y yields and 7.21% mortgages break the 4.1% labor market and widen HY OAS from current 320 bps tights.',
+        assets: [
+          { name: 'U.S. Equities', stance: 'MAX UNDERWEIGHT · QUALITY BALANCE SHEETS', stanceColor: 'rose', detail: 'Cut cyclical beta; hold Utilities, Staples, and net-cash mega-cap balance sheets.' },
+          { name: 'Treasury Duration & Curve', stance: 'MAX OVERWEIGHT 10Y–30Y NOMINAL BONDS', stanceColor: 'emerald', detail: 'Long 10Y–30Y Treasuries capture 150–250 bps of yield compression from 5.10% as Fed pivots to emergency cuts.' },
+          { name: 'USD & FX', stance: 'OVERWEIGHT USD & JPY SAFE HAVENS', stanceColor: 'emerald', detail: 'Global dollar funding squeeze and safe-haven flows drive sharp USD and JPY appreciation.' },
+          { name: 'Commodities & Energy', stance: 'UNDERWEIGHT CYCLICALS · HOLD GOLD', stanceColor: 'rose', detail: 'Short industrial metals and crude oil on demand contraction; retain core Gold hedge.' },
+          { name: 'Digital Assets', stance: 'UNDERWEIGHT UNTIL FED QE RESTART', stanceColor: 'rose', detail: 'De-risk during initial credit spread widening; re-enter once Fed restarts balance sheet expansion.' }
+        ]
+      }
+    };
+
+    // -----------------------------------------------------------------------
+    // 5. APPLICATION STATE
+    // -----------------------------------------------------------------------
+    let state = {
+      activeTab: 1,
+      catalystFilter: 'ALL',
+      selectedCatalystId: null,
+      freshnessFilter: 'ALL',
+      selectedPillarId: 'p6', // Default to Tech, AI & IP Leadership (+1.18Z)
+      playbookRegime: 'REFLATION',
+      charts: {}
+    };
+
+    // -----------------------------------------------------------------------
+    // 6. HELPER FUNCTIONS
+    // -----------------------------------------------------------------------
+    function getBadgeClasses(color) {
+      const map = {
+        emerald: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30',
+        amber: 'bg-amber-500/15 text-amber-300 border-amber-500/30',
+        rose: 'bg-rose-500/15 text-rose-400 border-rose-500/30',
+        cyan: 'bg-cyan-500/15 text-cyan-300 border-cyan-500/30',
+        violet: 'bg-violet-500/15 text-violet-300 border-violet-500/30'
+      };
+      return map[color] || map.emerald;
+    }
+
+    function getTextColorClass(color) {
+      const map = {
+        emerald: 'text-emerald-400',
+        amber: 'text-amber-400',
+        rose: 'text-rose-400',
+        cyan: 'text-cyan-400',
+        violet: 'text-violet-400'
+      };
+      return map[color] || 'text-slate-100';
+    }
+
+    function formatZ(z) {
+      return (z >= 0 ? '+' : '') + z.toFixed(2) + 'Z';
+    }
+
+    // -----------------------------------------------------------------------
+    // 7. RENDER 7-DAY CATALYST STRIP & SENSITIVITY DRAWER
+    // -----------------------------------------------------------------------
+    function renderCatalysts() {
+      const strip = document.getElementById('catalyst-strip');
+      const filtered = state.catalystFilter === 'ALL'
+        ? CATALYSTS
+        : CATALYSTS.filter(c => c.tier === 'TIER-1');
+
+      strip.className = state.catalystFilter === 'TIER-1'
+        ? 'grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-2'
+        : 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-2';
+
+      strip.innerHTML = filtered.map(c => {
+        const isSelected = state.selectedCatalystId === c.id;
+        const tierBadge = c.tier === 'TIER-1'
+          ? 'bg-rose-500/20 text-rose-300 border-rose-500/40'
+          : 'bg-slate-800 text-slate-300 border-slate-700';
+        const statusColor = c.id === 'cat-1' ? 'text-emerald-400' : (c.tier === 'TIER-1' ? 'text-amber-300' : 'text-slate-400');
+
+        return `
+          <button onclick="toggleCatalystDrawer('${c.id}')"
+            class="text-left rounded-lg p-2.5 bg-[#111827] border border-[#1e293b] hover:border-slate-600 transition flex flex-col justify-between ${isSelected ? 'catalyst-card-active' : ''}">
+            <div>
+              <div class="flex items-center justify-between gap-1 mb-1">
+                <span class="text-[10px] font-mono font-bold text-slate-300">${c.day}</span>
+                <span class="px-1.5 py-0.2 text-[9px] font-mono font-bold rounded border ${tierBadge}">${c.tier}</span>
+              </div>
+              <div class="text-[10px] font-mono ${statusColor} mb-1 truncate">${c.status}</div>
+              <div class="text-xs font-semibold text-slate-100 leading-snug line-clamp-2">${c.title}</div>
+            </div>
+            <div class="mt-2 pt-1.5 border-t border-[#1e293b]/80 flex items-center justify-between">
+              <span class="text-[10px] font-mono text-amber-400 truncate">${c.vol}</span>
+              <span class="text-[10px] font-mono text-slate-500">▸</span>
+            </div>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function setCatalystFilter(filter) {
+      state.catalystFilter = filter;
+      document.getElementById('btn-cat-all').className = filter === 'ALL'
+        ? 'px-2.5 py-0.5 text-[11px] font-mono font-semibold rounded bg-slate-800 text-slate-100 transition'
+        : 'px-2.5 py-0.5 text-[11px] font-mono font-semibold rounded text-slate-400 hover:text-slate-200 transition';
+      document.getElementById('btn-cat-t1').className = filter === 'TIER-1'
+        ? 'px-2.5 py-0.5 text-[11px] font-mono font-semibold rounded bg-rose-500/20 text-rose-300 border border-rose-500/30 transition'
+        : 'px-2.5 py-0.5 text-[11px] font-mono font-semibold rounded text-slate-400 hover:text-slate-200 transition';
+      renderCatalysts();
+    }
+
+    function toggleCatalystDrawer(id) {
+      const drawer = document.getElementById('catalyst-drawer');
+      if (state.selectedCatalystId === id) {
+        closeCatalystDrawer();
+        return;
+      }
+      state.selectedCatalystId = id;
+      const item = CATALYSTS.find(c => c.id === id);
+      if (!item) return;
+
+      const badgeEl = document.getElementById('drawer-tier-badge');
+      badgeEl.textContent = item.tier;
+      badgeEl.className = item.tier === 'TIER-1'
+        ? 'px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-rose-500/20 text-rose-300 border border-rose-500/40'
+        : 'px-2 py-0.5 text-[10px] font-mono font-bold rounded bg-slate-800 text-slate-300 border border-slate-700';
+
+      document.getElementById('drawer-datetime').textContent = `${item.day} · ${item.time}`;
+      document.getElementById('drawer-vol').textContent = `Realized 1D Vol: ${item.vol}`;
+      document.getElementById('drawer-title').textContent = item.title;
+      document.getElementById('drawer-consensus').textContent = item.consensus;
+      document.getElementById('drawer-flip').textContent = item.flipThreshold;
+      document.getElementById('drawer-upside').textContent = item.upside;
+      document.getElementById('drawer-inline').textContent = item.inline;
+      document.getElementById('drawer-downside').textContent = item.downside;
+
+      drawer.classList.remove('hidden');
+      renderCatalysts();
+    }
+
+    function closeCatalystDrawer() {
+      state.selectedCatalystId = null;
+      document.getElementById('catalyst-drawer').classList.add('hidden');
+      renderCatalysts();
+    }
+
+    // -----------------------------------------------------------------------
+    // 8. RENDER TAB 1 (ZONE A & ZONE B PILLARS)
+    // -----------------------------------------------------------------------
+    function renderLayer1Pillars() {
+      const zoneAGrid = document.getElementById('zone-a-grid');
+      const zoneBGrid = document.getElementById('zone-b-grid');
+
+      const matchesFilter = (item) => {
+        if (state.freshnessFilter === 'ALL') return true;
+        return item.freshnessGroup === state.freshnessFilter;
+      };
+
+      const renderCard = (p) => {
+        const visible = matchesFilter(p);
+        const zColor = p.zScore >= 0.5 ? 'text-emerald-400' : (p.zScore >= 0 ? 'text-amber-300' : 'text-rose-400');
+        return `
+          <div onclick="openPillarInTab3('${p.id}')"
+            class="${visible ? '' : 'hidden'} cursor-pointer bg-[#0b0f19] hover:bg-[#141d30] border border-[#1e293b] hover:border-amber-500/50 rounded-xl p-3.5 transition flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded border ${getBadgeClasses(p.freshnessColor)}">
+                  ${p.freshnessBadge}
+                </span>
+                <span class="text-[11px] font-mono text-slate-500 group-hover:text-amber-400 transition">DRILL ▸</span>
+              </div>
+
+              <div class="flex items-baseline justify-between gap-2">
+                <h3 class="text-sm font-bold text-slate-100 group-hover:text-amber-200 transition">
+                  <span class="font-mono text-xs text-slate-500 mr-1">${p.num}.</span>${p.name}
+                </h3>
+                <span class="text-base font-bold tabular-nums ${zColor} shrink-0">${formatZ(p.zScore)}</span>
+              </div>
+
+              <div class="mt-1 flex flex-wrap items-center gap-1.5">
+                <span class="text-[11px] font-mono text-slate-400">${p.weight}</span>
+                <span class="text-slate-600">·</span>
+                <span class="px-1.5 py-0.2 text-[10px] font-mono font-semibold rounded border ${getBadgeClasses(p.regimeColor)}">${p.regime}</span>
+              </div>
+
+              <div class="mt-2.5 px-2.5 py-1.5 rounded-lg bg-[#111827] border border-[#1e293b] text-xs font-mono text-slate-200">
+                ${p.rawMetric}
+              </div>
+
+              <p class="mt-2 text-xs text-slate-400 leading-relaxed">${p.summary}</p>
+            </div>
+
+            <div class="mt-3 pt-2 border-t border-[#1e293b]/80 flex items-center justify-between text-[10px] font-mono text-slate-400">
+              <span>Last: <strong class="text-slate-300">${p.lastPrint}</strong></span>
+              <span>Next: <strong class="text-cyan-300">${p.nextRelease}</strong></span>
+            </div>
+          </div>
+        `;
+      };
+
+      zoneAGrid.innerHTML = PILLARS.filter(p => p.zone === 'A').map(renderCard).join('');
+      zoneBGrid.innerHTML = PILLARS.filter(p => p.zone === 'B').map(renderCard).join('');
+    }
+
+    // -----------------------------------------------------------------------
+    // 9. RENDER TAB 2 (7 MONETARY, LIQUIDITY & CYCLICAL IMPULSE MODULES)
+    // -----------------------------------------------------------------------
+    function renderImpulseModules() {
+      const blockAEl = document.getElementById('impulse-block-a');
+      const blockBEl = document.getElementById('impulse-block-b');
+
+      const matchesFilter = (item) => {
+        if (state.freshnessFilter === 'ALL') return true;
+        return item.freshnessGroup === state.freshnessFilter;
+      };
+
+      const renderMod = (m) => {
+        const visible = matchesFilter(m);
+        return `
+          <div class="${visible ? '' : 'hidden'} bg-[#0b0f19] border border-[#1e293b] hover:border-slate-700 rounded-xl p-3.5 flex flex-col justify-between transition">
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded border ${getBadgeClasses(m.freshnessColor)}">
+                  ${m.freshnessBadge}
+                </span>
+                <span class="text-xs font-mono font-bold ${getTextColorClass(m.zColor)}">${m.zScore}</span>
+              </div>
+
+              <h3 class="text-sm font-bold text-slate-100">
+                <span class="font-mono text-xs text-slate-500 mr-1">${m.num}.</span>${m.title}
+              </h3>
+
+              <div class="mt-2 px-2.5 py-1.5 rounded-lg bg-[#111827] border border-[#1e293b] text-xs font-mono font-semibold text-slate-100">
+                ${m.primaryStat}
+              </div>
+
+              <div class="mt-2.5 space-y-1.5">
+                ${m.details.map(d => `
+                  <div class="flex items-start justify-between gap-2 text-xs border-b border-[#1e293b]/50 pb-1">
+                    <span class="text-slate-400 shrink-0">${d.label}:</span>
+                    <span class="font-mono text-slate-200 text-right">${d.val}</span>
+                  </div>
+                `).join('')}
+              </div>
+
+              <p class="mt-2.5 text-xs text-slate-400 leading-relaxed">${m.commentary}</p>
+            </div>
+
+            <div class="mt-3 pt-2 border-t border-[#1e293b]/80 flex items-center justify-between text-[10px] font-mono text-slate-400">
+              <span>Last Print: <strong class="text-slate-300">${m.lastPrint}</strong></span>
+              <span>Next: <strong class="text-cyan-300">${m.nextRelease}</strong></span>
+            </div>
+          </div>
+        `;
+      };
+
+      blockAEl.innerHTML = IMPULSE_MODULES.filter(m => m.block === 'A').map(renderMod).join('');
+      blockBEl.innerHTML = IMPULSE_MODULES.filter(m => m.block === 'B').map(renderMod).join('');
+    }
+
+    // -----------------------------------------------------------------------
+    // 10. RENDER TAB 3 (LAYER 2 PILLAR DRILL-DOWN EXPLORER)
+    // -----------------------------------------------------------------------
+    function initDrilldownSelector() {
+      const select = document.getElementById('pillar-select');
+      const pills = document.getElementById('pillar-pills');
+
+      select.innerHTML = PILLARS.map(p => `
+        <option value="${p.id}">[Zone ${p.zone} · #${p.num}] ${p.name} (${formatZ(p.zScore)})</option>
+      `).join('');
+
+      pills.innerHTML = PILLARS.map(p => `
+        <button id="pill-btn-${p.id}" onclick="selectDrilldownPillar('${p.id}')"
+          class="px-2.5 py-1 text-[11px] font-mono rounded-lg border transition">
+          ${p.num}. ${p.name.split('(')[0].trim()} (${formatZ(p.zScore)})
+        </button>
+      `).join('');
+
+      selectDrilldownPillar(state.selectedPillarId);
+    }
+
+    function selectDrilldownPillar(pillarId) {
+      state.selectedPillarId = pillarId;
+      const p = PILLARS.find(item => item.id === pillarId) || PILLARS[0];
+
+      document.getElementById('pillar-select').value = p.id;
+
+      PILLARS.forEach(item => {
+        const btn = document.getElementById(`pill-btn-${item.id}`);
+        if (!btn) return;
+        btn.className = item.id === p.id
+          ? 'px-2.5 py-1 text-[11px] font-mono font-bold rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/50 transition'
+          : 'px-2.5 py-1 text-[11px] font-mono rounded-lg bg-[#0b0f19] text-slate-400 border border-[#1e293b] hover:text-slate-200 transition';
+      });
+
+      // Data Vintage Audit Strip
+      const vintageBar = document.getElementById('drilldown-vintage-bar');
+      vintageBar.innerHTML = `
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded border ${getBadgeClasses(p.freshnessColor)}">${p.freshnessBadge}</span>
+            <span class="text-sm font-bold text-slate-100">Zone ${p.zone} · ${p.name}</span>
+            <span class="px-2 py-0.5 text-xs font-mono font-bold rounded border ${getBadgeClasses(p.regimeColor)}">${formatZ(p.zScore)} · ${p.regime}</span>
+          </div>
+          <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-slate-400">
+            <span>LAST PRINT: <strong class="text-slate-200">${p.lastPrint}</strong></span>
+            <span>NEXT RELEASE: <strong class="text-cyan-300">${p.nextRelease}</strong></span>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-2 pt-2 border-t border-[#1e293b]/80 text-xs">
+          <div class="text-slate-300"><span class="font-mono text-[10px] text-cyan-400 font-bold mr-1.5">VINTAGE AUDIT:</span>${p.drilldown.vintageNote}</div>
+          <div class="text-slate-300"><span class="font-mono text-[10px] text-amber-400 font-bold mr-1.5">REVISION NOTE:</span>${p.drilldown.revisionNote}</div>
+        </div>
+      `;
+
+      // 4-Panel Blueprint Grid
+      const grid = document.getElementById('drilldown-4panel');
+      grid.innerHTML = `
+        <div class="bg-[#0b0f19] border border-[#1e293b] rounded-xl p-3.5">
+          <div class="flex items-center gap-2 mb-1.5">
+            <span class="px-1.5 py-0.5 text-[10px] font-mono font-bold rounded bg-emerald-500/15 text-emerald-400">PANEL 1</span>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-200">Core Decomposition</h4>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">${p.drilldown.panel1}</p>
+        </div>
+
+        <div class="bg-[#0b0f19] border border-[#1e293b] rounded-xl p-3.5">
+          <div class="flex items-center gap-2 mb-1.5">
+            <span class="px-1.5 py-0.5 text-[10px] font-mono font-bold rounded bg-rose-500/15 text-rose-400">PANEL 2</span>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-200">Transmission &amp; Friction</h4>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">${p.drilldown.panel2}</p>
+        </div>
+
+        <div class="bg-[#0b0f19] border border-[#1e293b] rounded-xl p-3.5">
+          <div class="flex items-center gap-2 mb-1.5">
+            <span class="px-1.5 py-0.5 text-[10px] font-mono font-bold rounded bg-cyan-500/15 text-cyan-400">PANEL 3</span>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-200">High-Frequency Pulse</h4>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">${p.drilldown.panel3}</p>
+        </div>
+
+        <div class="bg-[#0b0f19] border border-[#1e293b] rounded-xl p-3.5">
+          <div class="flex items-center gap-2 mb-1.5">
+            <span class="px-1.5 py-0.5 text-[10px] font-mono font-bold rounded bg-amber-500/15 text-amber-300">PANEL 4</span>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-200">Cross-Asset Confirmation &amp; Alert</h4>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">${p.drilldown.panel4}</p>
+        </div>
+      `;
+
+      document.getElementById('drilldown-chart-title').textContent = p.drilldown.chartTitle;
+      document.getElementById('drilldown-chart-subtitle').textContent = p.drilldown.chartSubtitle;
+      document.getElementById('drilldown-chart-badge').textContent = `UNIT: ${p.drilldown.unit} · LATEST: ${p.drilldown.values[p.drilldown.values.length - 1]}`;
+
+      renderDrilldownChart(p);
+    }
+
+    function openPillarInTab3(pillarId) {
+      selectDrilldownPillar(pillarId);
+      switchTab(3);
+    }
+
+    // -----------------------------------------------------------------------
+    // 11. RENDER TAB 4 (LAYER 3 CROSS-ASSET POSITIONING MATRIX)
+    // -----------------------------------------------------------------------
+    function setPlaybookRegime(regimeKey) {
+      state.playbookRegime = regimeKey;
+
+      ['REFLATION', 'EXPANSION', 'STAGFLATION', 'CONTRACTION'].forEach(key => {
+        const btn = document.getElementById(`reg-btn-${key}`);
+        if (!btn) return;
+        if (key === regimeKey) {
+          btn.className = 'reg-btn px-3 py-1.5 text-xs font-mono font-bold rounded-md bg-amber-500/20 text-amber-300 border border-amber-500/40 transition';
+        } else {
+          btn.className = 'reg-btn px-3 py-1.5 text-xs font-mono font-semibold rounded-md text-slate-400 hover:text-slate-200 transition';
+        }
+      });
+
+      const data = PLAYBOOK_DATA[regimeKey];
+      document.getElementById('playbook-header-box').innerHTML = `
+        <div class="flex flex-wrap items-center gap-2 mb-1.5">
+          <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded border ${data.badgeClass}">${data.badge}</span>
+          <span class="text-xs sm:text-sm font-bold text-slate-100">${data.headline}</span>
+        </div>
+        <p class="text-xs text-slate-300">${data.guidance}</p>
+      `;
+
+      document.getElementById('playbook-cards').innerHTML = data.assets.map(a => `
+        <div class="bg-[#0b0f19] border border-[#1e293b] rounded-xl p-3.5 flex flex-col justify-between">
+          <div>
+            <div class="text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-1">${a.name}</div>
+            <div class="inline-block px-2 py-0.5 text-[10px] font-mono font-bold rounded border mb-2.5 ${getBadgeClasses(a.stanceColor)}">
+              ${a.stance}
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">${a.detail}</p>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // -----------------------------------------------------------------------
+    // 12. TAB & GLOBAL FRESHNESS NAVIGATION HANDLERS
+    // -----------------------------------------------------------------------
+    function switchTab(tabNum) {
+      state.activeTab = tabNum;
+      for (let i = 1; i <= 4; i++) {
+        const panel = document.getElementById(`tab-panel-${i}`);
+        const btn = document.getElementById(`tab-btn-${i}`);
+        if (i === tabNum) {
+          panel.classList.remove('hidden');
+          btn.className = 'tab-btn px-3 py-2 text-xs font-semibold rounded-lg bg-amber-500/15 text-amber-300 border border-amber-500/40 transition flex items-center gap-1.5';
+        } else {
+          panel.classList.add('hidden');
+          btn.className = 'tab-btn px-3 py-2 text-xs font-semibold rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800/60 border border-transparent transition flex items-center gap-1.5';
+        }
+      }
+      Object.values(state.charts).forEach(chart => {
+        if (chart && typeof chart.resize === 'function') chart.resize();
+      });
+    }
+
+    function setFreshnessFilter(filter) {
+      state.freshnessFilter = filter;
+      const map = {
+        ALL: { btnId: 'fresh-all', label: 'All Indicators (17)' },
+        LIVE_WEEKLY: { btnId: 'fresh-live', label: 'Live & Weekly (8)' },
+        MONTHLY_QUARTERLY: { btnId: 'fresh-lag', label: 'Monthly & Quarterly Lagged (9)' }
+      };
+      Object.entries(map).forEach(([key, cfg]) => {
+        const el = document.getElementById(cfg.btnId);
+        if (key === filter) {
+          el.className = 'fresh-btn px-2.5 py-1 text-[11px] font-mono font-semibold rounded bg-slate-800 text-slate-100 transition';
+          document.getElementById('active-filter-indicator').innerHTML = `Showing: <strong class="text-slate-200">${cfg.label}</strong>`;
+        } else {
+          el.className = 'fresh-btn px-2.5 py-1 text-[11px] font-mono font-semibold rounded text-slate-400 hover:text-slate-200 transition';
+        }
+      });
+
+      renderLayer1Pillars();
+      renderImpulseModules();
+    }
+
+    // -----------------------------------------------------------------------
+    // 13. CHART.JS VISUALIZATIONS
+    // -----------------------------------------------------------------------
+    Chart.defaults.color = '#94a3b8';
+    Chart.defaults.font.family = "'JetBrains Mono', monospace";
+    Chart.defaults.font.size = 11;
+
+    function initStaticCharts() {
+      // Tab 1 Chart A: Horizontal Bar Chart of all 10 Pillar 3-Year Z-Scores
+      const sortedPillars = [...PILLARS].sort((a, b) => b.zScore - a.zScore);
+      const ctx1A = document.getElementById('chart-pillar-zscores').getContext('2d');
+      state.charts.pillarZ = new Chart(ctx1A, {
+        type: 'bar',
+        data: {
+          labels: sortedPillars.map(p => `${p.num}. ${p.name.split('(')[0].trim()}`),
+          datasets: [{
+            label: '3Y Rolling Z-Score',
+            data: sortedPillars.map(p => p.zScore),
+            backgroundColor: sortedPillars.map(p =>
+              p.zScore >= 0 ? 'rgba(16, 185, 129, 0.78)' : 'rgba(244, 63, 94, 0.80)'
+            ),
+            borderColor: sortedPillars.map(p =>
+              p.zScore >= 0 ? '#10b981' : '#f43f5e'
+            ),
+            borderWidth: 1,
+            borderRadius: 4
+          }]
+        },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: '#0b0f19',
+              borderColor: '#334155',
+              borderWidth: 1,
+              callbacks: {
+                label: (ctx) => ` 3Y Z-Score: ${ctx.parsed.x >= 0 ? '+' : ''}${ctx.parsed.x.toFixed(2)}Z`
+              }
+            }
+          },
+          scales: {
+            x: {
+              grid: { color: '#1e293b' },
+              suggestedMin: -0.6,
+              suggestedMax: 1.4
+            },
+            y: {
+              grid: { display: false }
+            }
+          }
+        }
+      });
+
+      // Tab 1 Chart B: Dual-Axis Line Chart of Quarterly Real GDP Growth vs Core CPI & 10Y Treasury Yield (2024–Nov 2026)
+      const ctx1B = document.getElementById('chart-gdp-cpi-10y').getContext('2d');
+      state.charts.gdpCpi10y = new Chart(ctx1B, {
+        type: 'line',
+        data: {
+          labels: ['Q1 24', 'Q2 24', 'Q3 24', 'Q4 24', 'Q1 25', 'Q2 25', 'Q3 25', 'Q4 25', 'Q1 26', 'Q2 26', 'Q3 26', 'Nov 16, 26'],
+          datasets: [
+            {
+              label: 'Real GDP / Q4 GDPNow (% SAAR)',
+              data: [1.6, 3.0, 3.1, 2.5, 2.4, 2.8, 3.0, 2.9, 3.1, 3.2, 3.4, 3.5],
+              borderColor: '#10b981',
+              backgroundColor: 'rgba(16, 185, 129, 0.12)',
+              yAxisID: 'y',
+              tension: 0.3,
+              fill: true,
+              pointRadius: 3.5,
+              pointBackgroundColor: '#10b981'
+            },
+            {
+              label: 'Core CPI (% YoY)',
+              data: [3.8, 3.3, 3.3, 3.2, 3.1, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6],
+              borderColor: '#f59e0b',
+              yAxisID: 'y',
+              tension: 0.3,
+              fill: false,
+              pointRadius: 3.5,
+              pointBackgroundColor: '#f59e0b'
+            },
+            {
+              label: '10Y Treasury Yield (DGS10 %)',
+              data: [4.20, 4.36, 3.81, 4.58, 4.35, 4.42, 4.55, 4.68, 4.75, 4.82, 4.92, 5.10],
+              borderColor: '#f43f5e',
+              borderDash: [4, 3],
+              yAxisID: 'y1',
+              tension: 0.3,
+              fill: false,
+              pointRadius: 4,
+              pointBackgroundColor: '#f43f5e'
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: { boxWidth: 12, color: '#cbd5e1' }
+            },
+            tooltip: {
+              backgroundColor: '#0b0f19',
+              borderColor: '#334155',
+              borderWidth: 1
+            }
+          },
+          scales: {
+            x: { grid: { color: '#1e293b' } },
+            y: {
+              type: 'linear',
+              position: 'left',
+              grid: { color: '#1e293b' },
+              suggestedMin: 1.0,
+              suggestedMax: 4.5,
+              ticks: { callback: (v) => v.toFixed(1) + '%' },
+              title: { display: true, text: 'GDP / Core CPI %', color: '#94a3b8' }
+            },
+            y1: {
+              type: 'linear',
+              position: 'right',
+              grid: { drawOnChartArea: false },
+              suggestedMin: 3.5,
+              suggestedMax: 5.5,
+              ticks: { callback: (v) => v.toFixed(2) + '%' },
+              title: { display: true, text: '10Y Yield %', color: '#f43f5e' }
+            }
+          }
+        }
+      });
+
+      // Tab 2 Chart A: Fed Balance Sheet ($6.76T WALCL), Bank Reserves ($2.96T), and ON RRP ($0.00B) Exhaustion
+      const ctx2A = document.getElementById('chart-fed-plumbing').getContext('2d');
+      state.charts.fedPlumbing = new Chart(ctx2A, {
+        type: 'bar',
+        data: {
+          labels: ['Jun 26', 'Jul 26', 'Aug 26', 'Sep 26', 'Oct 26', 'Nov 16, 26'],
+          datasets: [
+            {
+              label: 'Fed Total Assets WALCL ($T)',
+              data: [6.89, 6.86, 6.83, 6.80, 6.77, 6.76],
+              backgroundColor: 'rgba(6, 182, 212, 0.65)',
+              borderColor: '#06b6d4',
+              borderWidth: 1,
+              borderRadius: 4
+            },
+            {
+              label: 'Bank Reserves WRESBAL ($T)',
+              data: [3.22, 3.16, 3.11, 3.05, 3.00, 2.96],
+              backgroundColor: 'rgba(16, 185, 129, 0.78)',
+              borderColor: '#10b981',
+              borderWidth: 1,
+              borderRadius: 4
+            },
+            {
+              label: 'ON RRP Facility RRPONTSYD ($T)',
+              data: [0.34, 0.24, 0.15, 0.08, 0.025, 0.00],
+              backgroundColor: 'rgba(244, 63, 94, 0.88)',
+              borderColor: '#f43f5e',
+              borderWidth: 1,
+              borderRadius: 4
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: { boxWidth: 12, color: '#cbd5e1' }
+            },
+            tooltip: {
+              backgroundColor: '#0b0f19',
+              borderColor: '#334155',
+              borderWidth: 1,
+              callbacks: {
+                label: (ctx) => {
+                  const val = ctx.parsed.y;
+                  if (ctx.dataset.label.includes('ON RRP') && val === 0) {
+                    return ' ON RRP Facility: $0.00B (EXHAUSTED)';
+                  }
+                  return ` ${ctx.dataset.label}: $${val.toFixed(2)}T`;
+                }
+              }
+            }
+          },
+          scales: {
+            x: { grid: { display: false } },
+            y: {
+              grid: { color: '#1e293b' },
+              suggestedMax: 7.5,
+              ticks: { callback: (v) => '$' + v.toFixed(1) + 'T' }
+            }
+          }
+        }
+      });
+
+      // Tab 2 Chart B: Yield Curve Bear-Steepening (DGS10 5.10% vs DGS2 4.88%, T10Y2Y +27 bps) & 10Y TIPS Real Yield
+      const ctx2B = document.getElementById('chart-yield-curve').getContext('2d');
+      state.charts.yieldCurve = new Chart(ctx2B, {
+        type: 'line',
+        data: {
+          labels: ['Oct 19', 'Oct 26', 'Nov 02', 'Nov 09', 'Nov 13', 'Nov 16'],
+          datasets: [
+            {
+              label: '10Y Nominal Yield (DGS10 %)',
+              data: [4.74, 4.80, 4.86, 4.94, 5.04, 5.10],
+              borderColor: '#f43f5e',
+              backgroundColor: 'rgba(244, 63, 94, 0.12)',
+              yAxisID: 'y',
+              tension: 0.25,
+              fill: false,
+              pointRadius: 4,
+              pointBackgroundColor: '#f43f5e'
+            },
+            {
+              label: '2Y Nominal Yield (DGS2 %)',
+              data: [4.58, 4.63, 4.68, 4.74, 4.84, 4.88],
+              borderColor: '#06b6d4',
+              yAxisID: 'y',
+              tension: 0.25,
+              fill: false,
+              pointRadius: 4,
+              pointBackgroundColor: '#06b6d4'
+            },
+            {
+              label: '10Y TIPS Real Yield (%)',
+              data: [2.28, 2.33, 2.38, 2.43, 2.50, 2.54],
+              borderColor: '#f59e0b',
+              borderDash: [4, 3],
+              yAxisID: 'y1',
+              tension: 0.25,
+              fill: false,
+              pointRadius: 4,
+              pointBackgroundColor: '#f59e0b'
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: { boxWidth: 12, color: '#cbd5e1' }
+            },
+            tooltip: {
+              backgroundColor: '#0b0f19',
+              borderColor: '#334155',
+              borderWidth: 1,
+              callbacks: {
+                label: (ctx) => ` ${ctx.dataset.label}: ${ctx.parsed.y.toFixed(2)}%`
+              }
+            }
+          },
+          scales: {
+            x: { grid: { color: '#1e293b' } },
+            y: {
+              type: 'linear',
+              position: 'left',
+              grid: { color: '#1e293b' },
+              suggestedMin: 4.4,
+              suggestedMax: 5.3,
+              ticks: { callback: (v) => v.toFixed(2) + '%' },
+              title: { display: true, text: 'Nominal Yields %', color: '#cbd5e1' }
+            },
+            y1: {
+              type: 'linear',
+              position: 'right',
+              grid: { drawOnChartArea: false },
+              suggestedMin: 2.1,
+              suggestedMax: 2.7,
+              ticks: { callback: (v) => v.toFixed(2) + '%' },
+              title: { display: true, text: '10Y TIPS Real %', color: '#f59e0b' }
+            }
+          }
+        }
+      });
+    }
+
+    function renderDrilldownChart(pillar) {
+      const ctx = document.getElementById('chart-drilldown-subseries').getContext('2d');
+      if (state.charts.drilldown) {
+        state.charts.drilldown.destroy();
+      }
+      const lineColor = pillar.zScore >= 0 ? '#10b981' : '#f43f5e';
+      const fillColor = pillar.zScore >= 0 ? 'rgba(16, 185, 129, 0.14)' : 'rgba(244, 63, 94, 0.14)';
+
+      state.charts.drilldown = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: pillar.drilldown.labels,
+          datasets: [{
+            label: `${pillar.name} (${pillar.drilldown.unit})`,
+            data: pillar.drilldown.values,
+            borderColor: lineColor,
+            backgroundColor: fillColor,
+            tension: 0.3,
+            fill: true,
+            pointRadius: 4,
+            pointBackgroundColor: lineColor
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: '#0b0f19',
+              borderColor: '#334155',
+              borderWidth: 1
+            }
+          },
+          scales: {
+            x: { grid: { color: '#1e293b' } },
+            y: { grid: { color: '#1e293b' } }
+          }
+        }
+      });
+    }
+
+    // -----------------------------------------------------------------------
+    // 14. INITIALIZE TERMINAL ON LOAD
+    // -----------------------------------------------------------------------
+    window.addEventListener('DOMContentLoaded', () => {
+      renderCatalysts();
+      renderLayer1Pillars();
+      renderImpulseModules();
+      initDrilldownSelector();
+      setPlaybookRegime('REFLATION');
+      initStaticCharts();
+    });
+  </script>
+</body>
+</html>
